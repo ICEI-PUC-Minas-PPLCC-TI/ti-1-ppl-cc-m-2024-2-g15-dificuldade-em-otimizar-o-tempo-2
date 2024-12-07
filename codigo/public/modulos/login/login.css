@@ -35,5 +35,8 @@ h2{
     color: #ffffff;
     border-radius: 30px;
 }
-
+.btn:hover{
+    background-color: rgb(15, 85, 151);
+    color: #ffffff;
+}
 
