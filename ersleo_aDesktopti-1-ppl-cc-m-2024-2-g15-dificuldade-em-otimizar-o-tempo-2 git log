@@ -1,0 +1,474 @@
+[33mcommit 6a8933702e35c26319f7d7f71a2f3b9b838851ea[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Leonardo <araujoleonardo5@gmail.com>
+Date:   Sat Dec 7 14:06:59 2024 -0300
+
+    feat: implementa funcionalidade de gerenciamento de tarefas
+    
+    - Adiciona função para marcar tarefas como concluídas
+    - Implementa botões de ação (editar, excluir, concluir)
+    - Adiciona estilos para tarefas concluídas
+    - Melhora a interface do usuário com ícones e feedback visual
+    - Implementa calendário para visualização das tarefas
+    - Implementado o header nas paginas da aplicação
+
+[33mcommit ab3bd6b5f9066a300b546927178c08e910796e9d[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Fri Dec 6 17:26:06 2024 -0300
+
+    Alterando nome do botão "Registrar" para "Cadastre-se"
+
+[33mcommit 3cda04d93a064d08d388852a2a8c1abad2847d22[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Nov 26 13:46:11 2024 -0300
+
+    Perfil username read fix
+
+[33mcommit 5ac4dc2f3e8033b220ed39ee69ade9babf1cff17[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Nov 26 13:45:03 2024 -0300
+
+    Add task function Cronograma
+
+[33mcommit e915c5eef63bcc8180967340fcdfb1ec4ec50f68[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Nov 26 13:44:14 2024 -0300
+
+    Database update
+
+[33mcommit 6dacf623ef675eb7e4fd5895a83c455741c16d11[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Nov 26 08:55:48 2024 -0300
+
+    Cronograma update
+
+[33mcommit 90a3d38b27faab15dbda16e240f926fa570dfbf1[m
+Merge: 898b3d5 421da04
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Nov 26 08:55:06 2024 -0300
+
+    HTML and Database update
+
+[33mcommit 898b3d5626697ccf6b2c32b5504eef40f7cdcd51[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Nov 26 08:50:33 2024 -0300
+
+    Database update
+
+[33mcommit e25b042a675b2dba2883e589f9458c9c08f75b34[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Nov 26 08:49:13 2024 -0300
+
+    Removing old database
+
+[33mcommit 421da0486f2f9c17588efd7531fdfca5b3f77ba9[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Sun Nov 24 19:47:38 2024 -0300
+
+    Atualizado metodo delete, usuário redirecionado para login
+
+[33mcommit 00b581fb0c82eff9ffdf4836ec9646ec5c72b6f7[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Sun Nov 24 19:27:04 2024 -0300
+
+    Alterando nome e espaçamento do botão
+
+[33mcommit ab2d2d1e01e0c567c723f376de9f10588df4918e[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Sun Nov 24 19:10:22 2024 -0300
+
+    Corrigido bug de editar informações
+
+[33mcommit 1c087e6a29def09c0f2f136c42a9b2af594070f8[m
+Merge: 9802ff1 f0bc93c
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Sun Nov 24 18:51:35 2024 -0300
+
+    Merge branch 'master' of https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g15-dificuldade-em-otimizar-o-tempo-2
+
+[33mcommit 9802ff14a415715bfb381d60079fe6ee9b32c8bc[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Sun Nov 24 18:29:40 2024 -0300
+
+    Bug corrigido do botão editar
+
+[33mcommit f0bc93c081083d5d5b9b96eabdf0e3c44cfde22d[m
+Author: Leonardo <araujoleonardo5@gmail.com>
+Date:   Sun Nov 24 18:18:28 2024 -0300
+
+    Implementaação da pagina tarefas, atualizacao do header global, olhe o exemplo de como implementei o header no modulo taref
+
+[33mcommit 72f17e4a4305c264e4c034090c7727a287545a70[m
+Merge: d1e6a20 c0db77f
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Sun Nov 24 17:19:26 2024 -0300
+
+    Merge branch 'master' of https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g15-dificuldade-em-otimizar-o-tempo-2
+
+[33mcommit d1e6a2079879fea021826c7b5eb48f0dacbc9d67[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Sun Nov 24 17:19:19 2024 -0300
+
+    Atualizando perfil.html e script.js
+
+[33mcommit c0db77f1513c5518a18c57ffc9b97e93bc10750b[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Nov 24 13:41:21 2024 -0300
+
+    Initial 'Cronograma' page
+
+[33mcommit 1ebc8d7480d666a0e892b7a6578e53954a963087[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Nov 24 13:40:06 2024 -0300
+
+    Fixing Cache issue
+
+[33mcommit 53a057101d3cf99df52066a006bd3b446d288e50[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Nov 24 13:39:25 2024 -0300
+
+    Cleaning HTML pages
+
+[33mcommit a76e22fb8e69c132cfa8517a06f1255223721c47[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Nov 24 13:37:58 2024 -0300
+
+    Fixing page redirection
+
+[33mcommit ebdbe5f6b030cb8c8d665a18f868876db2701fe5[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Nov 24 13:37:12 2024 -0300
+
+    New db for better testing (more tasks)
+
+[33mcommit 70ca8bfd70535dc2530f18bad91fb72b73aa13af[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Thu Nov 21 15:15:34 2024 -0300
+
+    Aplicando responsividade na pagina perfil
+
+[33mcommit 4e253630f98cdca83de3de628a0cf167f50e44d5[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 22:47:39 2024 -0300
+
+    Ajuste do botão editar
+
+[33mcommit 09ede68521b013bed006adc0ee142e2094fc29cb[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 21:43:12 2024 -0300
+
+    Alterando tamanho fonte
+
+[33mcommit 9e3609ee4ecc6d524fbea6cb8d8cb50d3923c516[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 21:39:16 2024 -0300
+
+    Tamanho botão
+
+[33mcommit 677a2c8357acd717c9defc0e1a27586635eb5736[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 21:03:13 2024 -0300
+
+    Cor de fundo e Tamanho título
+
+[33mcommit fa8ff90a38dade9dcf2a191b35d8b8dc91707cb8[m
+Merge: 89fe8ed 4458a47
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 20:47:16 2024 -0300
+
+    Merge branch 'master' of https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g15-dificuldade-em-otimizar-o-tempo-2
+
+[33mcommit 89fe8ed7f192b24ef56e334eba4ced36c5a715b1[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 20:32:46 2024 -0300
+
+    Alterações e Adicionando arquivo css
+
+[33mcommit 4458a479c4b08ed6116fd127ee395a5a291c2723[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 20:32:46 2024 -0300
+
+    Alterações e Adcionando CSS
+
+[33mcommit fae2d54714e270cc20fe17c77ec0252f8b0c70ac[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 19:53:04 2024 -0300
+
+    display flex nome e data
+
+[33mcommit 0d91e8f137f7b3e2d015b826a8837f97dd4a873e[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 19:16:19 2024 -0300
+
+    Informações pessoais e Informações de acesso
+
+[33mcommit 18ad3bc60e7e6f6a789c5d4547cb14f07d627b8c[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 18:10:26 2024 -0300
+
+    Adicionando menu na página perfil
+
+[33mcommit 0fb60d77c84c0065996f3afc9d2357d1c1d02e5a[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Nov 20 17:45:04 2024 -0300
+
+    Página Perfil
+
+[33mcommit 91ecac9f23ca76951cf7aead2ec34238900a33d0[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 30 19:45:03 2024 -0300
+
+    Fix tasks increasing bug
+
+[33mcommit 8240dc478d7ea96f220073c046b013f9b5b51be2[m
+Merge: cef8a01 4acb9eb
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 30 19:16:21 2024 -0300
+
+    Merge branch 'master' of https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g15-dificuldade-em-otimizar-o-tempo-2
+
+[33mcommit cef8a017a055a9ac1a3a09d4c37838983622268e[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 30 19:10:41 2024 -0300
+
+    Proper page redirect
+
+[33mcommit 4acb9eb518a234056b8f6cc60af5d4ff536788b1[m
+Author: Leonardo Araujo Passos <77520362+LeoPassos98@users.noreply.github.com>
+Date:   Wed Oct 30 18:48:11 2024 -0300
+
+    criado pagina tarefas
+    
+    Pagina de tarefas
+
+[33mcommit 26f4cfec575649a06c47721e2da875a114e7d6cf[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 30 17:36:35 2024 -0300
+
+    Removing unnecessary parameter
+
+[33mcommit adf6737eb2ef4082e145ade2058b85ba2a0a1f56[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 30 16:16:47 2024 -0300
+
+    Separating data per week
+
+[33mcommit 7dd72fc0543d98826beeca3f0f15accf2ff851b6[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 30 16:16:12 2024 -0300
+
+    Button for past week and actual week
+
+[33mcommit 77b1de28c36b33d00dc1fb89806c42206432b380[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 30 16:15:41 2024 -0300
+
+    Bigger data in db for better testing
+
+[33mcommit bb1d46a2f4943ff8ea756dec085fc5ded6585d6a[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Wed Oct 30 11:13:11 2024 -0300
+
+    Mensagem enviada pega dados do usuário logado
+
+[33mcommit b907b4869321e8c713ab54cb5a78ee01f63ee8f1[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 29 17:43:14 2024 -0300
+
+    Data comes from the logged on user
+
+[33mcommit 83ba8cf54c91361c8a612cb8dfbe30b277fb187d[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 29 17:42:10 2024 -0300
+
+    User id in tasks added
+
+[33mcommit 6e8be6e01b0145bb7d67432a3731a6108e29f2a4[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 29 11:07:03 2024 -0300
+
+    Completed tasks bar animation added
+
+[33mcommit 3774e60f294952236c3919e439198c20d39c263c[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 29 08:25:10 2024 -0300
+
+    Categories by time spent added
+
+[33mcommit 059d22850f07cbbe8f2732e7565d059643d67f61[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 29 07:45:56 2024 -0300
+
+    concluidasHoje function fix
+
+[33mcommit 2c0272e931ad3743206c0575ffa79bf7f2c4e810[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 16:05:48 2024 -0300
+
+    Support page header fix
+
+[33mcommit 182547dd03354127a29ee971472d321efe66bd80[m
+Author: malumanini <marialuizam.deoliveira@gmail.com>
+Date:   Sun Oct 27 15:49:07 2024 -0300
+
+    Página de Suporte
+
+[33mcommit f52908c80ec68933d2697de8c9c5e5e1e7c9e07e[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 15:47:40 2024 -0300
+
+    Fixing href directory path
+
+[33mcommit b1d30dccd675daeaa65643a4c9b3c27f2cf948b3[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 15:47:11 2024 -0300
+
+    Hour and time separated
+
+[33mcommit e46a66b19fec26a955d14f474b963e3da34b0c97[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 15:15:27 2024 -0300
+
+    Increased progress bar size
+
+[33mcommit 4a1e2fa61658c2155fb87a7811a773bccf4e4f9c[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 13:37:50 2024 -0300
+
+    More/less completed tasks today indicators
+
+[33mcommit 3aca11b0df2f915873c56c41f4c0ecd4c6d1e9ad[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 13:37:06 2024 -0300
+
+    Data filter corrected, completed tasks today function added
+
+[33mcommit 57950faf617a97e01c77c005aa57fa59b51f138e[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 13:35:24 2024 -0300
+
+    Line graph with correct value, number of tasks completed today added
+
+[33mcommit 187a89ed26eef0dd48d41b2fbf827574f96715cd[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 13:34:10 2024 -0300
+
+    More tasks for better testing
+
+[33mcommit 2cb2120b37d4faed5fd1482c2691d8a202d2c75e[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 00:19:03 2024 -0300
+
+    Analysis page - Sprint 1: Marcos Vinicius
+
+[33mcommit 03a06710fd4026b804e82bfed5efeb85525cc7d1[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 00:18:31 2024 -0300
+
+    Database update, new date form
+
+[33mcommit a59f21a6b4b5ec21728d05d31457fad718b0032b[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 00:18:00 2024 -0300
+
+    Package.json (unchanged)
+
+[33mcommit 0bc3a09108bbe7d9d04aa499c16a82e0433ae932[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 00:17:11 2024 -0300
+
+    readOnly false
+
+[33mcommit 1728262eb9763e3b04fd79d77b9a77ad6aca7968[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Sun Oct 27 00:16:16 2024 -0300
+
+    Header change
+
+[33mcommit 7d02d486866ddbf798e9c176bfd9e0f233cecc09[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 23 17:41:55 2024 -0300
+
+    Adicionado atributo número de tarefas na funcionalidade de login
+
+[33mcommit abe619e1403a28cf471437de33edbd2b467b54b4[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 23 17:41:10 2024 -0300
+
+    HTML/CSS Header
+
+[33mcommit 3d798e43d4bde7955cffb0116f7d0a3dce5c81b4[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 23 17:40:11 2024 -0300
+
+    Update database
+
+[33mcommit 71ea7cddf18884b1c0786570a1d4bb8c0acf13e6[m
+Merge: d65cbbf 8312fb4
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 23 17:38:27 2024 -0300
+
+    Merge branch 'master' of https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g15-dificuldade-em-otimizar-o-tempo-2
+
+[33mcommit d65cbbf23be4fe13a42bec6329539f9085dc183f[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Wed Oct 23 17:38:08 2024 -0300
+
+    Database update, objetos separados
+
+[33mcommit 8312fb46a77080a7c6766c6da8a800b475d2d324[m
+Author: marcosware <141648729+marcosware@users.noreply.github.com>
+Date:   Tue Oct 22 11:47:42 2024 -0300
+
+    First database version
+    
+    OBS: Separar 'tarefas' de 'usuario'
+    Renomear para db.json na versão final
+
+[33mcommit 34bb54196c48e50b7d542a49201e360112c0a9c0[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 1 17:48:26 2024 -0300
+
+    Add missing support wireframe
+
+[33mcommit 003280222c206b8b8aecdcc6bf99b6ce154209d5[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 1 17:46:11 2024 -0300
+
+    New Kanban Image
+
+[33mcommit 2f43d57a0e9246db49c7fe24b572846bc149a47b[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 1 17:45:52 2024 -0300
+
+    Doc Finalization
+
+[33mcommit d533056b26f904f43f516c3393b8cecd7c408e14[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 1 17:08:20 2024 -0300
+
+    Removing old merged parts
+
+[33mcommit 49534b6f36c6664e89574d6e4cacd3ebf0804cd3[m
+Merge: d606609 28203ff
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 1 17:05:48 2024 -0300
+
+    Doc Merge
+
+[33mcommit d6066090f33942d8ebce4cd886780c7b2264490b[m
+Author: Marcosware <marcosware.dev@gmail.com>
+Date:   Tue Oct 1 17:04:05 2024 -0300
+
+    Readding everything
+
+[33mcommit 28203ff32e6dba5528cca7a3a34f7689df1c5f57[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Tue Oct 1 14:55:12 2024 +0000
+
+    add online IDE url
+
+[33mcommit 41732c51fedf15ae6ee70062701f255310d462ea[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Tue Sep 17 14:06:23 2024 +0000
+
+    Initial commit

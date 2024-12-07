@@ -42,60 +42,6 @@
   ],
   "tarefas": [
     {
-      "id": 1,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo1",
-      "categoria": "Estudo",
-      "prioridade": 1,
-      "dataInicio": {
-        "dd": 1,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 5,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 3,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "concluido": 1,
-      "tempoGasto": {
-        "hr": 2,
-        "min": 30
-      }
-    },
-    {
-      "id": 2,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo2",
-      "categoria": "Trabalho",
-      "prioridade": 2,
-      "dataInicio": {
-        "dd": 1,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 3,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 3,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "concluido": 1,
-      "tempoGasto": {
-        "hr": 3,
-        "min": 15
-      }
-    },
-    {
       "id": 3,
       "id_usuario": 2,
       "nomeTarefa": "tarefa_exemplo3",
@@ -120,33 +66,6 @@
       "tempoGasto": {
         "hr": 1,
         "min": 45
-      }
-    },
-    {
-      "id": 4,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo4",
-      "categoria": "Trabalho",
-      "prioridade": 1,
-      "dataInicio": {
-        "dd": 10,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 15,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 12,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "concluido": 0,
-      "tempoGasto": {
-        "hr": 4,
-        "min": 0
       }
     },
     {
@@ -177,33 +96,6 @@
       }
     },
     {
-      "id": 6,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo6",
-      "categoria": "Estudo",
-      "prioridade": 1,
-      "dataInicio": {
-        "dd": 20,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 25,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 24,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "concluido": 1,
-      "tempoGasto": {
-        "hr": 3,
-        "min": 0
-      }
-    },
-    {
       "id": 7,
       "id_usuario": 2,
       "nomeTarefa": "tarefa_exemplo7",
@@ -231,33 +123,6 @@
       }
     },
     {
-      "id": 8,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo8",
-      "categoria": "Estudo",
-      "prioridade": 2,
-      "dataInicio": {
-        "dd": 29,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 30,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 30,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "concluido": 1,
-      "tempoGasto": {
-        "hr": 2,
-        "min": 15
-      }
-    },
-    {
       "id": 9,
       "id_usuario": 2,
       "nomeTarefa": "tarefa_exemplo9",
@@ -281,33 +146,6 @@
       "concluido": 0,
       "tempoGasto": {
         "hr": 4,
-        "min": 30
-      }
-    },
-    {
-      "id": 10,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo10",
-      "categoria": "Trabalho",
-      "prioridade": 1,
-      "dataInicio": {
-        "dd": 6,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 10,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 10,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "concluido": 1,
-      "tempoGasto": {
-        "hr": 1,
         "min": 30
       }
     },
@@ -339,33 +177,6 @@
       }
     },
     {
-      "id": 12,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo12",
-      "categoria": "Lazer",
-      "prioridade": 3,
-      "dataInicio": {
-        "dd": 13,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 17,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 15,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "concluido": 0,
-      "tempoGasto": {
-        "hr": 4,
-        "min": 30
-      }
-    },
-    {
       "id": 13,
       "id_usuario": 2,
       "nomeTarefa": "tarefa_exemplo13",
@@ -390,33 +201,6 @@
       "tempoGasto": {
         "hr": 3,
         "min": 15
-      }
-    },
-    {
-      "id": 14,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo14",
-      "categoria": "Trabalho",
-      "prioridade": 2,
-      "dataInicio": {
-        "dd": 23,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 26,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 24,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "concluido": 0,
-      "tempoGasto": {
-        "hr": 2,
-        "min": 0
       }
     },
     {
@@ -447,33 +231,6 @@
       }
     },
     {
-      "id": 16,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo16",
-      "categoria": "Estudo",
-      "prioridade": 3,
-      "dataInicio": {
-        "dd": 1,
-        "mm": 12,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 5,
-        "mm": 12,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 5,
-        "mm": 12,
-        "yyyy": 2024
-      },
-      "concluido": 0,
-      "tempoGasto": {
-        "hr": 3,
-        "min": 30
-      }
-    },
-    {
       "id": 17,
       "id_usuario": 2,
       "nomeTarefa": "tarefa_exemplo17",
@@ -498,33 +255,6 @@
       "tempoGasto": {
         "hr": 2,
         "min": 45
-      }
-    },
-    {
-      "id": 18,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo18",
-      "categoria": "Lazer",
-      "prioridade": 2,
-      "dataInicio": {
-        "dd": 11,
-        "mm": 12,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 15,
-        "mm": 12,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 14,
-        "mm": 12,
-        "yyyy": 2024
-      },
-      "concluido": 0,
-      "tempoGasto": {
-        "hr": 4,
-        "min": 0
       }
     },
     {
@@ -555,31 +285,104 @@
       }
     },
     {
-      "id": 20,
-      "id_usuario": 1,
-      "nomeTarefa": "tarefa_exemplo20",
-      "categoria": "Trabalho",
-      "prioridade": 2,
+      "id_usuario": "1",
+      "nomeTarefa": "adsqad",
+      "categoria": "asdasd",
+      "prioridade": 1,
       "dataInicio": {
-        "dd": 21,
+        "dd": 0,
+        "mm": 0,
+        "yyyy": 0
+      },
+      "dataFim": {
+        "dd": 0,
+        "mm": 0,
+        "yyyy": 0
+      },
+      "dataConclusao": {
+        "dd": 7,
+        "mm": 12,
+        "yyyy": 2024
+      },
+      "concluido": 1,
+      "tempoGasto": {
+        "hr": 0,
+        "min": 0
+      },
+      "id": 23
+    },
+    {
+      "id_usuario": "1",
+      "nomeTarefa": "asdasd",
+      "categoria": "asdas",
+      "prioridade": 1,
+      "dataInicio": {
+        "dd": 0,
+        "mm": 0,
+        "yyyy": 0
+      },
+      "dataFim": {
+        "dd": 0,
+        "mm": 0,
+        "yyyy": 0
+      },
+      "dataConclusao": {
+        "dd": 7,
+        "mm": 12,
+        "yyyy": 2024
+      },
+      "concluido": 1,
+      "tempoGasto": {
+        "hr": 0,
+        "min": 0
+      },
+      "id": 24
+    },
+    {
+      "id_usuario": "1",
+      "nomeTarefa": "sadasdas",
+      "categoria": "asdasd",
+      "prioridade": 1,
+      "dataInicio": {
+        "dd": 0,
+        "mm": 0,
+        "yyyy": 0
+      },
+      "dataFim": {
+        "dd": 0,
+        "mm": 0,
+        "yyyy": 0
+      },
+      "dataConclusao": null,
+      "concluido": 0,
+      "tempoGasto": {
+        "hr": 0,
+        "min": 0
+      },
+      "id": 25
+    },
+    {
+      "id_usuario": "1",
+      "nomeTarefa": "asdasd",
+      "categoria": "dasda",
+      "prioridade": 1,
+      "dataInicio": {
+        "dd": 13,
         "mm": 12,
         "yyyy": 2024
       },
       "dataFim": {
-        "dd": 25,
+        "dd": 20,
         "mm": 12,
         "yyyy": 2024
       },
-      "dataConclusao": {
-        "dd": 24,
-        "mm": 12,
-        "yyyy": 2024
-      },
+      "dataConclusao": null,
       "concluido": 0,
       "tempoGasto": {
-        "hr": 5,
+        "hr": 0,
         "min": 0
-      }
+      },
+      "id": 26
     }
   ],
   "cronograma": [

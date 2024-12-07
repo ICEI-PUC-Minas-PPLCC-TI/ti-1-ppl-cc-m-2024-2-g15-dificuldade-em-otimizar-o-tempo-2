@@ -1,4 +1,4 @@
-        // ------------------------------------------------
+// ------------------------------------------------
         // Define a estrutura de dados a ser utilizada na aplicação e obtida
         // através de uma requisição ao servidor JSONServer
         // ------------------------------------------------
@@ -57,7 +57,16 @@
                 })
         }
 
-        window.onload = () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+          try {
+              const headerResponse = await fetch('../../header.html');
+              const headerHtml = await headerResponse.text();
+              document.getElementById('header-container').innerHTML = headerHtml;
+          } catch (error) {
+              console.error('Erro ao carregar header:', error);
+          }
+      
+          // ...existing code...
           execucao();
           fetch (`/tarefas?id_usuario=${usuarioCorrente.id}`, {
             method: 'GET',
@@ -73,7 +82,7 @@
           .catch (error => {
             alert ('Erro ao obet dados do servidro:' + error.message);
           })
-        }
+        });
 
         function createBarChart(data) {
             // ------------------------------------------------

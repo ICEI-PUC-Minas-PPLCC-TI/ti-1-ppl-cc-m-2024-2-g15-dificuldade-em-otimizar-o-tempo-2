@@ -112,6 +112,7 @@ body {
 .task-actions .btn {
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
+    margin-left: 5px;
 }
 
 /**
@@ -166,4 +167,13 @@ body {
     .card {
         margin-bottom: 1rem;
     }
+}
+
+/* Estilos para tarefas concluídas */
+.task-completed {
+    opacity: 0.7;
+}
+
+.task-completed .task-title {
+    text-decoration: line-through;
 }

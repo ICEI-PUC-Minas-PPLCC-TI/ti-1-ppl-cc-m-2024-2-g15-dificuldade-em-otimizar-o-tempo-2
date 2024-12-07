@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         li.className = `list-group-item task-item priority-${
             task.prioridade === 1 ? 'high' : 
             task.prioridade === 2 ? 'medium' : 'low'
-        }`;
+        } ${task.concluido ? 'task-completed' : ''}`;
         
         const formatDate = date => date.dd === 0 ? 'Sem data' : `${String(date.dd).padStart(2, '0')}/${String(date.mm).padStart(2, '0')}/${date.yyyy}`;
         
@@ -155,12 +155,39 @@ document.addEventListener('DOMContentLoaded', async () => {
         const actions = document.createElement('div');
         actions.className = 'task-actions';
         
-        ['Editar', 'Remover'].forEach(action => {
+        // Array com as ações disponíveis
+        const actionButtons = [
+            {
+                name: 'Concluir',
+                icon: 'check-circle',  // Alterado aqui
+                class: 'outline-success',
+                action: () => completeTask(task)
+            },
+            {
+                name: 'Editar',
+                icon: 'pencil',
+                class: 'outline-warning',
+                action: () => editTask(task)
+            },
+            {
+                name: 'Remover',
+                icon: 'trash',
+                class: 'outline-danger',
+                action: () => deleteTask(task)
+            }
+        ];
+
+        // Criar botões de ação
+        actionButtons.forEach(({name, icon, class: btnClass, action}) => {
             const btn = document.createElement('button');
-            btn.className = `btn btn-${action === 'Editar' ? 'outline-warning' : 'outline-danger'} btn-sm`;
-            btn.innerHTML = `<i class="bi bi-${action === 'Editar' ? 'pencil' : 'trash'}-fill"></i>`;
-            btn.title = action;
-            btn.onclick = () => action === 'Editar' ? editTask(task) : deleteTask(task);
+            btn.className = `btn btn-${btnClass} btn-sm me-1`;
+            btn.innerHTML = `<i class="bi bi-${icon}"></i>`; // Removido o -fill
+            btn.title = name;
+            btn.onclick = action;
+            // Desabilitar botões de editar e concluir se a tarefa já estiver concluída
+            if ((name === 'Editar' || name === 'Concluir') && task.concluido) {
+                btn.disabled = true;
+            }
             actions.appendChild(btn);
         });
         
@@ -170,9 +197,96 @@ document.addEventListener('DOMContentLoaded', async () => {
         return li;
     };
 
+    // Função para concluir tarefa
+    const completeTask = (task) => {
+        if (confirm(`Deseja marcar a tarefa "${task.nomeTarefa}" como concluída?`)) {
+            const now = new Date();
+            const dataConclusao = {
+                dd: now.getDate(),
+                mm: now.getMonth() + 1,
+                yyyy: now.getFullYear()
+            };
+
+            fetch(`/tarefas/${task.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    ...task,
+                    concluido: 1,
+                    dataConclusao
+                })
+            })
+            .then(() => {
+                loadTasks();
+                calendar.refetchEvents(); // Atualizar o calendário
+            })
+            .catch(err => console.error('Erro ao concluir tarefa:', err));
+        }
+    };
+
+    // Função para editar tarefa
+    const editTask = (task) => {
+        console.log('Editar tarefa:', task);
+        // Preencher o formulário com os dados da tarefa
+        document.getElementById('taskId').value = task.id;
+        document.getElementById('taskName').value = task.nomeTarefa;
+        document.getElementById('taskCategory').value = task.categoria;
+        document.getElementById('taskPriority').value = task.prioridade;
+        
+        if (task.dataInicio.dd !== 0) {
+            document.getElementById('enableStartDate').checked = true;
+            document.getElementById('taskStartDate').disabled = false;
+            document.getElementById('taskStartDate').value = dateToString(task.dataInicio);
+        } else {
+            document.getElementById('enableStartDate').checked = false;
+            document.getElementById('taskStartDate').disabled = true;
+            document.getElementById('taskStartDate').value = '';
+        }
+        
+        if (task.dataFim.dd !== 0) {
+            document.getElementById('enableEndDate').checked = true;
+            document.getElementById('taskEndDate').disabled = false;
+            document.getElementById('taskEndDate').value = dateToString(task.dataFim);
+        } else {
+            document.getElementById('enableEndDate').checked = false;
+            document.getElementById('taskEndDate').disabled = true;
+            document.getElementById('taskEndDate').value = '';
+        }
+        
+        // Alterar o texto do botão para "Salvar Alterações"
+        document.querySelector('#taskForm button[type="submit"]').textContent = 'Salvar Alterações';
+        
+        // Rolar a página até o formulário
+        document.querySelector('#taskForm').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    // Função para limpar o formulário
+    const resetForm = () => {
+        document.getElementById('taskForm').reset();
+        document.getElementById('taskId').value = '';
+        document.getElementById('taskStartDate').disabled = true;
+        document.getElementById('taskEndDate').disabled = true;
+        document.querySelector('#taskForm button[type="submit"]').textContent = 'Adicionar Tarefa';
+    };
+
+    // Função para excluir tarefa
+    const deleteTask = (task) => {
+        console.log('Excluir tarefa:', task);
+        if (confirm(`Tem certeza que deseja excluir a tarefa "${task.nomeTarefa}"?`)) {
+            fetch(`/tarefas/${task.id}`, {
+                method: 'DELETE'
+            })
+            .then(() => {
+                loadTasks();
+            })
+            .catch(err => console.error('Erro ao excluir tarefa:', err));
+        }
+    };
+
     // Event Listeners
     document.getElementById('taskForm').addEventListener('submit', (e) => {
         e.preventDefault();
+        const taskId = document.getElementById('taskId').value;
         const formData = {
             id_usuario: usuario.id,
             nomeTarefa: document.getElementById('taskName').value,
@@ -189,15 +303,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             tempoGasto: { hr: 0, min: 0 }
         };
 
-        fetch('/tarefas', {
-            method: 'POST',
+        const method = taskId ? 'PUT' : 'POST';
+        const url = taskId ? `/tarefas/${taskId}` : '/tarefas';
+
+        fetch(url, {
+            method: method,
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         })
         .then(() => {
             loadTasks();
-            document.getElementById('taskForm').reset();
-            bootstrap.Modal.getInstance(document.getElementById('taskModal')).hide();
+            resetForm();
         })
         .catch(err => console.error('Erro:', err));
     });

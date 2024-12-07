@@ -1,69 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/login.js"></script>
-  </head>
-  <body>
-  <!-- <header>
-      <div class="banner">
-        <img src="./assets/images/banner_ti.png" alt="" />
-      </div>
-      <div class="barra-info">
-        <nav class="menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">Sobre nós</a></li>
-          </ul>
-        </nav>
-        <div class="dados-usuario">
-          <span id="userInfo"></span>
-        </div>
-      </div>
-    </header> -->
-    <header>
-      <nav class="navbar navbar-expand-sm ms-5 ps-5 mt-2">
-        <div class="dados-usuario">
-          <span id="userInfo"></span>
-        </div>
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <span class="h3">
-                  <span style="color: #CC5B6F">O</span>PTIMUS
-                  <span style="color: #134263">T</span>IME
-              </span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav nav-justified w-100">
-                <li class="nav-item">
-                  <a class="nav-link" href="modulos/dashboard/dashboard.html">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="modulos/cronograma/cronograma.html">Cronograma</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="modulos/analise/analise.html">Análise</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="modulos/sugestoes/sugestoes.html">Sugestões</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="modulos/suporte/suporte.html">Contato</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="modulos/perfil/perfil.html">Perfil</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-  </header>
+    <script src="./assets/js/header.js" defer></script>
+</head>
+<body>
+    <div id="header-container"></div>
+
     <main>
         <h3>Boas vindas</h3>
         <p>Sejam bem-vindos à home-page do projeto de TI 1 - Trabalho
@@ -114,5 +61,5 @@
         <p>O arquivo JSON utilizado para definição das estruturas dos dados providos pela aplicação é localizado na pasta db e tem um formato como o mostrado no exemplo da figura a seguir. Esse arquivo define uma estrutura hipotética de contatos que descreve itens com os seguintes atributos: <code>id</code>, <code>nome</code> e <code>cidade</code>. para o JSON Server, é fundamental que toda estrutura tenha um atributo de identificador de nome <code>id</code>.</p>
         <p><img class="img-fluid d-block w-50 m-auto" src="./assets/images/arquivo_json.png" alt=""></p>
     </main>
-  </body>
+</body>
 </html>

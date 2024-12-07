@@ -20,6 +20,18 @@ function execucao() {
           })
   }
 
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const headerResponse = await fetch('../../header.html');
+        const headerHtml = await headerResponse.text();
+        document.getElementById('header-container').innerHTML = headerHtml;
+    } catch (error) {
+        console.error('Erro ao carregar header:', error);
+    }
+
+    execucao();
+});
+
 window.onload = () => {
     document.getElementById('btn_salvar').addEventListener('click', criarHorario);  
     execucao();
