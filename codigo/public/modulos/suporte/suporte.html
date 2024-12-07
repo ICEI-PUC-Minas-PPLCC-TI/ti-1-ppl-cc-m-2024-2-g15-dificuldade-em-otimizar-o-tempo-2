@@ -14,49 +14,16 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm ms-5 ps-5 mt-2">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="../../index.html">
-                <span class="h3">
-                    <span style="color: #CC5B6F">O</span>PTIMUS
-                    <span style="color: #134263">T</span>IME
-                </span>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav nav-justified w-100">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../dashboard/dashboard.html">Dashboard</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../cronograma/cronograma.html">Cronograma</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../analise/analise.html">Análise</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../sugestoes/sugestoes.html">Sugestões</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contato</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../perfil/perfil.html">Perfil</a>
-                  </li>
-                </ul>
-              </div>
+        <div id="header-container"></div>
+        <div class="page-header">
+            <div class="container">
+                <h1>Suporte e Feedback</h1>
             </div>
-          </nav>
+        </div>
     </header>
-
+    
 
     <main class="container w-100">
-        <div class="mb-4">
-            <h3 class="mt-5">Contato</h3>
-            <hr>
-        </div>
         <div class="box border rounded-5 p-4">
             <div class=" mb-4">
                 <h5><strong>Envie-nos uma mensagem!</strong></h5>
@@ -123,6 +90,17 @@
         })();
     </script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const headerResponse = await fetch('../../header.html');
+                const headerHtml = await headerResponse.text();
+                document.getElementById('header-container').innerHTML = headerHtml;
+            } catch (error) {
+                console.error('Erro ao carregar header:', error);
+            }
+        });
+    </script>
 </body>
 
 </html>
