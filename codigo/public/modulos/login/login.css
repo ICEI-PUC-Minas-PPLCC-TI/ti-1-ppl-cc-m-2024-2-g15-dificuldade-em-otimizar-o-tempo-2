@@ -1,0 +1,39 @@
+body{
+    background-color: #134263;
+}
+
+.conteudo{
+    background-color: #ffffff;
+    border: none;
+    border-radius: 30px;
+}
+form{
+    padding: 40px;
+    background-color: white;
+}
+h2{
+    color: #134263;
+}
+.form-group{
+    padding: 10px;
+}
+.label__text{
+    font-size: 20px;
+}
+.btn_cadastre{
+    font-size: 18px;
+    background-color: #134263;
+    padding: 10px 25px 10px 25px;
+    color: #ffffff;
+    border-radius: 30px;
+    
+}
+.btn__login{
+    font-size: 18px;
+    background-color: #134263;
+    padding: 10px 40px 10px 40px;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+
