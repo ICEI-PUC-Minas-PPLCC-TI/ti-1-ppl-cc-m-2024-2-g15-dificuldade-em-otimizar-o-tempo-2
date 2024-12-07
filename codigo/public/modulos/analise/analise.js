@@ -101,12 +101,17 @@
             inicioSemanaPassada.setDate(inicioSemanaAtual.getDate() - numeroSemana);
 
             const filtroSemana = data.filter(item => {
-              const dataConclusao = new Date(item.dataConclusao.yyyy, item.dataConclusao.mm - 1, item.dataConclusao.dd);
-              if(numeroSemana != 0) {
-                return dataConclusao < inicioSemanaAtual;
-              } else {
-                return dataConclusao >= inicioSemanaPassada;
-              }
+                  // Verificar se a data de conclusão existe e é válida
+                  if (item.dataConclusao && item.dataConclusao.yyyy && item.dataConclusao.mm && item.dataConclusao.dd) {
+                    const dataConclusao = new Date(item.dataConclusao.yyyy, item.dataConclusao.mm - 1, item.dataConclusao.dd);
+                    if (numeroSemana !== 0) {
+                        return dataConclusao < inicioSemanaAtual;
+                    } else {
+                        return dataConclusao >= inicioSemanaPassada;
+                    }
+                }
+                // Exclui o item caso não tenha uma data de conclusão válida
+                return false;
             });
             // const dataConclusao = new Date(data.dataConclusao).getDay;
             const dataString = Array.from(filtroSemana.map(item => new Date(item.dataConclusao.yyyy + "/" + item.dataConclusao.mm + "/" + item.dataConclusao.dd)));
@@ -135,6 +140,9 @@
                 'rgba(255, 99, 132)',
                 'rgba(54, 162, 235)',
                 'rgba(255, 206, 86)',
+                'rgba(75, 192, 192)',
+                'rgba(153, 102, 255)',
+                'rgba(255, 159, 64)'
               ]
             /*  
                 'rgba(75, 192, 192)',
@@ -187,7 +195,19 @@
       }
 
       function concluidasHoje(data) {
-        const dataString = Array.from(data.map(item => new Date(item.dataConclusao.yyyy + "/" + item.dataConclusao.mm + "/" + item.dataConclusao.dd)));
+        const tarefasConclusasHoje = data.filter(item => {
+          if (item.dataConclusao && item.dataConclusao.yyyy && item.dataConclusao.mm && item.dataConclusao.dd) {
+              const dataConclusao = new Date(item.dataConclusao.yyyy, item.dataConclusao.mm - 1, item.dataConclusao.dd);
+              const hoje = new Date();
+              // Verifica se a data de conclusão é igual à data de hoje
+              return dataConclusao.toDateString() === hoje.toDateString();
+          }
+          // Exclui o item caso não tenha uma data de conclusão válida
+          return false;
+      });
+  
+      // Transforma as datas de conclusão em strings (ou pode ser usado diretamente para análise)
+      const dataString = Array.from(tarefasConclusasHoje.map(item => new Date(item.dataConclusao.yyyy + "/" + item.dataConclusao.mm + "/" + item.dataConclusao.dd)));
         const hoje = document.getElementById("hojeProgresso");
         if(hoje.textContent === '') {
           hoje.textContent = 0;
