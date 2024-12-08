@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         },
         events: async (info, successCallback) => {
             try {
-                const response = await fetch(`/tarefas?id_usuario=${usuario.id}`);
+                const response = await fetch(`/tarefas?id_usuario=${usuario.id}`, {headers: {'Cache-Control': 'no-cache'}});
                 const tasks = await response.json();
                 const events = tasks.map(task => ({
                     title: task.nomeTarefa,
