@@ -23,6 +23,7 @@
                             class="bi bi-person-circle"></i> Perfil</a></li>
                 <li class="nav-item"><a class="nav-link" href="/modulos/suporte/suporte.html"><i
                             class="bi bi-info-circle"></i> Suporte</a></li>
+                <li class="nav-item"><button id="btnLogout" onclick="logoutUser()"><i class="bi bi-box-arrow-right"></i></button></li>
             </ul>
         </div>
     </div>
@@ -82,5 +83,12 @@
 
     .nav-link:hover {
         color: #CC5B6F !important;
+    }
+
+    #btnLogout {
+        outline: none !important; 
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0.5rem 0rem 0rem 3rem;
     }
 </style>

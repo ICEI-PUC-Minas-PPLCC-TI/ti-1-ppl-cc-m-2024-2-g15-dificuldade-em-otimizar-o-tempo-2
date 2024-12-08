@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!usuario) return window.location.href = "/login.html";
 
     // Funções utilitárias
-    const formatDate = date => date.dd === 0 ? 'Sem data' : 
+    const formatDate = date => date.dd === 0 ? 'Sem data' :
         `${String(date.dd).padStart(2, '0')}/${String(date.mm).padStart(2, '0')}/${date.yyyy}`;
 
     const getDateObject = dateString => {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return { dd, mm, yyyy };
     };
 
-    const dateToString = date => date.yyyy ? 
+    const dateToString = date => date.yyyy ?
         `${date.yyyy}-${String(date.mm).padStart(2, '0')}-${String(date.dd).padStart(2, '0')}` : null;
 
     const getPriorityColor = priority => {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const headerResponse = await fetch('../../header.html');
         const headerHtml = await headerResponse.text();
         document.getElementById('header-container').innerHTML = headerHtml;
-        
+
         const userNameElement = document.getElementById('userName');
         if (userNameElement && usuario.nome) {
             userNameElement.textContent = `Tarefas de ${usuario.nome}`;
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         dateTypes.forEach(type => {
             const checkbox = document.getElementById(`enable${type}Date`);
             const dateInput = document.getElementById(`task${type}Date`);
-            
+
             if (checkbox && dateInput) {
                 checkbox.addEventListener('change', (e) => {
                     console.log(`Checkbox ${type} alterado:`, e.target.checked);
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Handlers
     const loadTasks = () => {
         fetch(`/tarefas?id_usuario=${usuario.id}`, {
-            headers: {'Cache-Control': 'no-cache', }
+            headers: { 'Cache-Control': 'no-cache', }
         })
             .then(res => res.json())
             .then(tasks => {
@@ -132,16 +132,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const createTaskElement = (task) => {
         const li = document.createElement('li');
-        li.className = `list-group-item task-item priority-${
-            task.prioridade === 1 ? 'high' : 
-            task.prioridade === 2 ? 'medium' : 'low'
-        } ${task.concluido ? 'task-completed' : ''}`;
-        
+        li.className = `list-group-item task-item priority-${task.prioridade === 1 ? 'high' :
+                task.prioridade === 2 ? 'medium' : 'low'
+            } ${task.concluido ? 'task-completed' : ''}`;
+
         const formatDate = date => date.dd === 0 ? 'Sem data' : `${String(date.dd).padStart(2, '0')}/${String(date.mm).padStart(2, '0')}/${date.yyyy}`;
-        
+
         const taskContent = document.createElement('div');
         taskContent.className = 'task-content d-flex justify-content-between align-items-start w-100';
-        
+
         const mainContent = document.createElement('div');
         mainContent.innerHTML = `
             <div class="task-title">${task.nomeTarefa}</div>
@@ -153,10 +152,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </span>
             </div>
         `;
-        
+
         const actions = document.createElement('div');
         actions.className = 'task-actions';
-        
+
         // Array com as ações disponíveis
         const actionButtons = [
             {
@@ -180,7 +179,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         ];
 
         // Criar botões de ação
-        actionButtons.forEach(({name, icon, class: btnClass, action}) => {
+        actionButtons.forEach(({ name, icon, class: btnClass, action }) => {
             const btn = document.createElement('button');
             btn.className = `btn btn-${btnClass} btn-sm me-1`;
             btn.innerHTML = `<i class="bi bi-${icon}"></i>`; // Removido o -fill
@@ -192,7 +191,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
             actions.appendChild(btn);
         });
-        
+
         taskContent.appendChild(mainContent);
         taskContent.appendChild(actions);
         li.appendChild(taskContent);
@@ -218,11 +217,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                     dataConclusao
                 })
             })
-            .then(() => {
-                loadTasks();
-                calendar.refetchEvents(); // Atualizar o calendário
-            })
-            .catch(err => console.error('Erro ao concluir tarefa:', err));
+                .then(() => {
+                    loadTasks();
+                    calendar.refetchEvents(); // Atualizar o calendário
+                })
+                .catch(err => console.error('Erro ao concluir tarefa:', err));
         }
     };
 
@@ -234,7 +233,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('taskName').value = task.nomeTarefa;
         document.getElementById('taskCategory').value = task.categoria;
         document.getElementById('taskPriority').value = task.prioridade;
-        
+
         if (task.dataInicio.dd !== 0) {
             document.getElementById('enableStartDate').checked = true;
             document.getElementById('taskStartDate').disabled = false;
@@ -244,7 +243,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('taskStartDate').disabled = true;
             document.getElementById('taskStartDate').value = '';
         }
-        
+
         if (task.dataFim.dd !== 0) {
             document.getElementById('enableEndDate').checked = true;
             document.getElementById('taskEndDate').disabled = false;
@@ -254,10 +253,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('taskEndDate').disabled = true;
             document.getElementById('taskEndDate').value = '';
         }
-        
+
         // Alterar o texto do botão para "Salvar Alterações"
         document.querySelector('#taskForm button[type="submit"]').textContent = 'Salvar Alterações';
-        
+
         // Rolar a página até o formulário
         document.querySelector('#taskForm').scrollIntoView({ behavior: 'smooth' });
     };
@@ -278,10 +277,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             fetch(`/tarefas/${task.id}`, {
                 method: 'DELETE'
             })
-            .then(() => {
-                loadTasks();
-            })
-            .catch(err => console.error('Erro ao excluir tarefa:', err));
+                .then(() => {
+                    loadTasks();
+                })
+                .catch(err => console.error('Erro ao excluir tarefa:', err));
         }
     };
 
@@ -294,7 +293,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             nomeTarefa: document.getElementById('taskName').value,
             categoria: document.getElementById('taskCategory').value,
             prioridade: parseInt(document.getElementById('taskPriority').value),
-            dataInicio: document.getElementById('enableStartDate').checked ? 
+            dataInicio: document.getElementById('enableStartDate').checked ?
                 getDateObject(document.getElementById('taskStartDate').value) :
                 { dd: 0, mm: 0, yyyy: 0 },
             dataFim: document.getElementById('enableEndDate').checked ?
@@ -310,14 +309,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         fetch(url, {
             method: method,
-            headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache'},
+            headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' },
             body: JSON.stringify(formData)
         })
-        .then(() => {
-            loadTasks();
-            resetForm();
-        })
-        .catch(err => console.error('Erro:', err));
+            .then(() => {
+                loadTasks();
+                resetForm();
+            })
+            .catch(err => console.error('Erro:', err));
     });
 
     // Inicialização
@@ -326,3 +325,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Garante que o nome seja atualizado mesmo se o header falhar
     atualizarNomeUsuario();
 });
+
+function logoutUser() {
+    sessionStorage.removeItem('usuarioCorrente');
+    window.location = "/modulos/login/login.html";
+}
