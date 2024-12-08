@@ -118,7 +118,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Handlers
     const loadTasks = () => {
-        fetch(`/tarefas?id_usuario=${usuario.id}`)
+        fetch(`/tarefas?id_usuario=${usuario.id}`, {
+            headers: {'Cache-Control': 'no-cache', }
+        })
             .then(res => res.json())
             .then(tasks => {
                 const taskList = document.getElementById('taskList');
@@ -308,7 +310,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         fetch(url, {
             method: method,
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache'},
             body: JSON.stringify(formData)
         })
         .then(() => {
