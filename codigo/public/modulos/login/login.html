@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="login.css">
 </head>
 
-<body class="">
+<body>
   <div id="login">
     <div class="container">
       <div id="login-row" class="d-flex justify-content-center align-items-center  m-5 p-5">
         <div id="login-column" class="col-md-6 conteudo p-5">
           <div id="login-box" class="col-md-12">
             <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
-              <h2 class="text-center mb-5">Identificação de Usuário</h2>
+              <h2 class="text-center mb-5"><strong>Identificação de Usuário</strong></h2>
               <div class="form-group input__form">
                 <label for="username" class="label__text"><strong>Login</strong></label><br>
                 <input type="text" name="username" id="username" class="form-control">
@@ -31,7 +31,7 @@
                 <input type="password" name="password" id="password" class="form-control">
               </div>
               <div class="form-group text-center mt-3 botao__form">
-                <button type="button" class="btn btn_cadastre" data-bs-toggle="modal" data-bs-target="#loginModal">Cadastre-se</button>
+                <button type="button" class="btn btn__cadastre" data-bs-toggle="modal" data-bs-target="#loginModal">Cadastre-se</button>
                 <input type="submit" name="submit" class="btn btn__login" value="Login"> 
               </div>
             </form>
@@ -47,33 +47,36 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Login App</h5>
-          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span class="logo">
+            <span class="logo-o">O</span>PTIMUS
+            <span class="logo-t">T</span>IME
+          </span>
+          <button type="button" class="close icone_x" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <div id="login-box" class="col-md-12">
             <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
-              <h3 class="text-center text-info">Novo usuário</h3>
+              <h2 class="text-center">Novo usuário</h2>
               <div class="form-group">
-                <label for="login" class="text-info">Usuário</label><br>
+                <label for="login" class="label__text"><strong>Usuário</strong></label><br>
                 <input type="text" name="txt_login" id="txt_login" class="form-control">
               </div>
               <div class="form-group">
-                <label for="nome" class="text-info">Nome completo</label><br>
+                <label for="nome" class="label__text"><strong>Nome completo</strong></label><br>
                 <input type="text" name="txt_nome" id="txt_nome" class="form-control">
               </div>
               <div class="form-group">
-                <label for="email" class="text-info">email</label><br>
+                <label for="email" class="label__text"><strong>email</strong></label><br>
                 <input type="text" name="txt_email" id="txt_email" class="form-control">
               </div>
               <div class="form-group">
-                <label for="senha" class="text-info">Senha</label><br>
+                <label for="senha" class="label__text"><strong>Senha</strong></label><br>
                 <input type="password" name="txt_senha" id="txt_senha" class="form-control">
               </div>
               <div class="form-group">
-                <label for="senha2" class="text-info">Confirmação de Senha</label><br>
+                <label for="senha2" class="label__text"><strong>Confirmação de Senha</strong></label><br>
                 <input type="password" name="txt_senha2" id="txt_senha2" class="form-control">
               </div>
             </form>

@@ -2,6 +2,19 @@ body{
     background-color: #134263;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-o {
+    color: #CC5B6F;
+}
+
+.logo-t {
+    color: #134263;
+}
+
 .conteudo{
     background-color: #ffffff;
     border: none;
@@ -19,9 +32,15 @@ h2{
 }
 .label__text{
     font-size: 20px;
+    color: #134263;
 }
-.btn_cadastre{
+.label__senha{
+    font-size: 20px;
+    color: #CC5B6F;
+}
+.btn__cadastre{
     font-size: 18px;
+    font-weight: bold;
     background-color: #134263;
     padding: 10px 25px 10px 25px;
     color: #ffffff;
@@ -30,13 +49,26 @@ h2{
 }
 .btn__login{
     font-size: 18px;
-    background-color: #134263;
-    padding: 10px 40px 10px 40px;
+    font-weight: bold;
+    background-color: #CC5B6F;
+    padding: 10px 45px 10px 45px;
     color: #ffffff;
     border-radius: 30px;
 }
-.btn:hover{
+.btn__cadastre:hover{
     background-color: rgb(15, 85, 151);
     color: #ffffff;
 }
+.btn__login:hover{
+    background-color: rgb(87, 19, 19);
+    color: #ffffff;
+}
 
+.icone_x{
+    background-color: #ffffff;
+    color: rgb(131, 18, 18);
+    font-size: 40px;
+    border: none;
+    margin-left: 250px;
+    margin-bottom: 13px;
+}
