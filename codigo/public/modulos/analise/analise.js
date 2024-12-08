@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   })
     .then(response => response.json())
     .then(data => {
-      tempoGasto(data)
       concluidasHoje(data)
     })
     .catch(error => {
@@ -229,19 +228,6 @@ function concluidasHoje(data) {
   }
   else {
     hoje.textContent = qtdConcluidas;
-  }
-}
-
-function tempoGasto(data) {
-  const categorias = Array.from(new Set(data.map(item => item.categoria)));
-  const horasPorCategoria = categorias.map(categoria => {
-    const horas = data.filter(item => item.categoria === categoria)
-      .reduce((acc, curr) => acc + curr, 0);
-    return horas;
-  });
-  let divCategoria = document.getElementById("tempoGastoCategoria");
-  for (let i = 0; i < categorias.length; i++) {
-    divCategoria.innerHTML += categorias[i] + "<br>";
   }
 }
 

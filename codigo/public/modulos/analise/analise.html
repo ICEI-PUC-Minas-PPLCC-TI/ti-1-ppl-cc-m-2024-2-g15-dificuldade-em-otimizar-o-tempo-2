@@ -16,7 +16,7 @@
       </div>
   </div>
     <main>
-      <div class="row ms-5 mt-3">
+      <div class="row ms-5 mt-2">
         <div class="col-sm-3 me-5 ms-5">
           <div class="card">
             <div class="card-body">
@@ -37,39 +37,21 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-3 me-5">
+        <div class="col-sm-6 ms-5">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tempo gasto</h5>
-              <p id="tempoGastoCategoria" class="card-text"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 me-5">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">W.I.P.</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eveniet accusantium, maiores tempore deserunt ex nam quo recusandae explicabo quia ullam.</p>
+              <h5 class="card-title">Gráfico de Linha</h5>
+              <button id="botaoPassada" type="button" class="btn btn-outline-primary" onclick="passarSemana(-1)">Semana passada</button>
+              <button id="botaoAtual" type="button" class="btn btn-outline-primary" onclick="passarSemana(1)">Semana atual</button>
+              <canvas id="divBarChart"></canvas>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row ms-5 mt-3 ms-5">
-      <div class="col-sm-6 ms-5">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Gráfico de Linha</h5>
-            <button id="botaoPassada" type="button" class="btn btn-outline-primary" onclick="passarSemana(-1)">Semana passada</button>
-            <button id="botaoAtual" type="button" class="btn btn-outline-primary" onclick="passarSemana(1)">Semana atual</button>
-            <canvas id="divBarChart"></canvas>
-            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a> -->
-          </div>
-        </div>
-      </div>
-    </div>
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="analise.js"></script>
