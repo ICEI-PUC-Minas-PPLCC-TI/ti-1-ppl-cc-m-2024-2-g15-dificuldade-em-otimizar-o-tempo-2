@@ -44,8 +44,7 @@ h2{
     background-color: #134263;
     padding: 10px 25px 10px 25px;
     color: #ffffff;
-    border-radius: 30px;
-    
+    border-radius: 30px; 
 }
 .btn__login{
     font-size: 18px;
@@ -55,11 +54,28 @@ h2{
     color: #ffffff;
     border-radius: 30px;
 }
-.btn__cadastre:hover{
+.btn__salvar{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #134263;
+    padding: 10px 25px 10px 25px;
+    color: #ffffff;
+    border-radius: 30px;
+}
+.btn__cancelar{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #CC5B6F;
+    padding: 10px 25px 10px 25px;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+.btn__cadastre:hover, .btn__salvar:hover{
     background-color: rgb(15, 85, 151);
     color: #ffffff;
 }
-.btn__login:hover{
+.btn__login:hover, .btn__cancelar:hover{
     background-color: rgb(87, 19, 19);
     color: #ffffff;
 }
