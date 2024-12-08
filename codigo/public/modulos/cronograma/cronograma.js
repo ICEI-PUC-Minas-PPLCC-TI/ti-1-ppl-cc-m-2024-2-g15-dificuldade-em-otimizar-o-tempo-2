@@ -234,7 +234,10 @@ async function criarHorario() {
 
 
 function carregarTarefa(data, dataTasks, i) {
-    removerTarefasInexistentes(data, dataTasks);
+    if(Array.from(data.map(item => item.tarefas.ids)).flat() == i-1) {
+        removerTarefasInexistentes(data, dataTasks);
+    }
+    
     //console.log(JSON.stringify(data, null, 2));
     let dias = Array.from(data.map(item => item.tarefas.horarios.diasSemana[i].dias));
     //alert(dias);
@@ -261,6 +264,7 @@ function carregarTarefa(data, dataTasks, i) {
                 let tarefaInfo = `${horarios[i]}\n${nomes[i]}`;
                 tarefaHTML.innerHTML = `${tarefaInfo}`;
                 document.getElementById(dia).appendChild(tarefaHTML);
+                document.getElementById(dia).appendChild(document.createElement("br"));
             }
         })
     }
@@ -288,24 +292,27 @@ function removerTarefasInexistentes(data, dataTasks) {
         item.tarefas.ids.forEach((id, index) => {
             if (idsValidos.includes(id)) {
                 // Adiciona os dias e horários correspondentes aos IDs válidos
-                diasValidos.push(item.tarefas.horarios.diasSemana[index].dias);
-                horariosInicioValidos.push(item.tarefas.horarios.inicio[index]);
-                horariosFimValidos.push(item.tarefas.horarios.fim[index]);
+                const dias = item.tarefas.horarios.diasSemana[index].dias;
+                if (dias.length > 0) {  // Verifica se o array 'dias' não está vazio
+                    diasValidos.push(dias);
+                    horariosInicioValidos.push(item.tarefas.horarios.inicio[index]);
+                    horariosFimValidos.push(item.tarefas.horarios.fim[index]);
+                }
             }
         });
 
-        // Atualiza o objeto 'item' com os dados válidos
+        // Atualiza o objeto 'item' com os dados válidos, removendo qualquer entrada com 'dias' vazio
         item.tarefas.ids = idsValidos;
-        item.tarefas.horarios.diasSemana = item.tarefas.horarios.diasSemana.map((dias, index) => {
-            return { dias: diasValidos[index] || [] };
-        });
+        item.tarefas.horarios.diasSemana = diasValidos.map(dias => ({ dias }));  // Sem dias vazios
         item.tarefas.horarios.inicio = horariosInicioValidos;
         item.tarefas.horarios.fim = horariosFimValidos;
     });
 
     // Remover entradas de 'item' onde 'ids' está vazio
     data = data.filter(item => item.tarefas.ids.length > 0);
-    // Mal funcionamento: atualizarDelete(data);
+
+    // Chama a função de atualização (assumindo que seja necessário)
+    atualizarDelete(data[0]);
 }
 
 function logoutUser() {
@@ -313,7 +320,7 @@ function logoutUser() {
     window.location = "/modulos/login/login.html";
 }
 
-/*
+
 function atualizarDelete(data)
 {
     fetch(`/cronograma/${usuarioCorrente.id}`, {
@@ -324,4 +331,4 @@ function atualizarDelete(data)
         },
         body: JSON.stringify(data),
     })
-}*/
+}
