@@ -6,7 +6,6 @@ Informações básicas do projeto.
 * **Repositório GitHub:** [ti-1-ppl-cc-m-2024-2-g15-dificuldade-em-otimizar-o-tempo-2](https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g15-dificuldade-em-otimizar-o-tempo-2)
 * **Membros da equipe:**
 
-  * [João Paulo Cury Torres](https://github.com)
   * [Leonardo Araujo Passos](https://github.com/LeoPassos98)
   * [Marcos Vinicius Nunes Reis](https://github.com/marcosware)
   * [Maria Luiza Manini de Oliveira](https://github.com/malumanini)
@@ -151,30 +150,18 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | ID     | Descrição do Requisito                                   | Prioridade |
 | ------ | ---------------------------------------------------------- | ---------- |
-| RF-001 | Cadastro e login com e-mail, senha ou redes sociais | ALTA       |
+| RF-001 | Cadastro e login com e-mail, senha  | ALTA       |
 | RF-002 | Gerenciar conclusão, nome, data e prioridade das tarefas | ALTA     |
 | RF-003 | Mostrar tarefas no dashboard e cronograma | ALTA     |
-| RF-004 | Sugerir otimizações no cronograma com base nas prioridades | ALTA     |
-| RF-005 | Gerar relatórios e gráficos sobre tempo gasto e progresso | ALTA     |
-| RF-006 | Alterar preferências do usuário, como notificações e tema | MÉDIA     |
-| RF-007 | Enviar lembretes com notificações com diferenças de cores a partir da prioridade sobre o início das tarefas | MÉDIA     |
-| RF-008 | Exibir o propósito do app e um slogan no topo | BAIXA     |
-| RF-009 | Formulário simples de cadastro com validação de campos | ALTA     |
-| RF-010 | Dashboard com lista de tarefas, botão de nova tarefa e barra de navegação. | MÉDIA     |
-| RF-011 | Formulário para criar nova tarefa com campos de nome, data/hora, prioridade | ALTA     |
-| RF-012 | Página do cronograma para visualização e reordenação com tarefas organizadas por tempo | MÉDIA     |
-| RF-013 | Página de progresso para exibir gráficos e estatísticas sobre tempo gasto e eficiência | MÉDIA     |
-| RF-014 | Página de configurações para ajustar preferências de notificação e integração com calendários | MÉDIA     |
-| RF-015 | Design responsivo e otimizado para diferentes dispositivos (desktop, tablet, smartphone) com layout dinâmico via CSS | MÉDIA     |
-| RF-016 | Perfil do usuário com suas informações com opção de edição | MÉDIA     |
-| RF-017 | Criar um pop-up temporário que aparece quando o usuário tenta excluir uma tarefa. | BAIXA     |
-| RF-018 | Página dedicada ao envio de feedback, com um formulário contendo campos de texto para categorizar o feedback | BAIXA     |
-| RF-019 | Implementar um campo de busca que permite ao usuário filtrar as tarefas por horário | MÉDIA     |
-| RF-020 | Exibir um cronômetro de contagem regressiva para tarefas com prazo de conclusão | BAIXA     |
-| RF-021 | Implementar um temporizador que permite ao usuário usar a técnica Pomodoro | BAIXA     |
-| RF-022 | Implementar notificações automáticas via browser que aparecem quando uma tarefa está prestes a começar | BAIXA     |
-| RF-023 | Permitir que o usuário marque uma tarefa como "recorrente" (diária, semanal, mensal) e que ela seja automaticamente replicada no cronograma | MÉDIA     |
-| RF-024 | Ícone para mostrar o email de contato para suporte caso ocorra algum bug | BAIXA     |
+| RF-004 | Gerar relatórios e gráficos sobre progresso de conclusão das tarefas | ALTA     |
+| RF-005 | Formulário simples de cadastro com validação de campos | ALTA     |
+| RF-006 | Dashboard com lista de tarefas, botão de nova tarefa e barra de navegação. | MÉDIA     |
+| RF-007 | Formulário para criar nova tarefa com campos de nome, data/hora, prioridade | ALTA     |
+| RF-008 | Página do cronograma para visualização com tarefas organizadas por tempo | MÉDIA     |
+| RF-009 | Design responsivo e otimizado para diferentes dispositivos (desktop, tablet, smartphone) com layout dinâmico via CSS | MÉDIA     |
+| RF-010 | Perfil do usuário com suas informações com opção de edição | MÉDIA     |
+| RF-011 | Criar um pop-up temporário que aparece quando o usuário tenta excluir uma tarefa. | BAIXA     |
+| RF-012 | Página dedicada ao envio de feedback de usuários que envia ao e-mail de contato para suporte caso o usuário queira relatar algo. | BAIXA     |
 
 
 ### Requisitos não Funcionais
@@ -185,7 +172,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RNF-002 | Deve ser utilizado as linguagens HTML, CSS e JavaScript                             | ALTA       |
 | RNF-003 | Interface limpa e fonte de fácil leitura                                            | MÉDIA      |
 | RNF-004 | Troca de dados pelo JSON                                                            | MÉDIA      |
-| RNF-005 | Seguir a LGPD enquanto estiver tratando os dados do usuário                         | ALTA      |
 
 ## Projeto de Interface
 
