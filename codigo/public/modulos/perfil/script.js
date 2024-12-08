@@ -1,37 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const apiUrl = '/usuarios';
+var usuarioCorrente = {};
 
-    sessionStorage.setItem('userId', 1);
+document.addEventListener("DOMContentLoaded", function () {
+    
 
     const fullNameInput = document.getElementById("fullName");
-    const birthDateInput = document.getElementById("birthDate");
     const emailInput = document.getElementById("email");
 
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
 
-    const editPersonalInfoButton = document.getElementById("editPersonalInfoButton");
-    const savePersonalInfoButton = document.getElementById("savePersonalInfoButton");
-
-    const editLoginInfoButton = document.getElementById("editLoginInfoButton");
-    const saveLoginInfoButton = document.getElementById("saveLoginInfoButton");
+    const editInfoButton = document.getElementById("editInfoButton");
+    const saveInfoButton = document.getElementById("saveInfoButton");
 
     const deleteAccountButton = document.getElementById("deleteAccountButton");
 
-    function displayMessage(mensagem) {
-        const msg = document.getElementById('msg');
-        msg.innerHTML = `<div class="alert alert-warning">${mensagem}</div>`;
+    usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
+    if (usuarioCorrenteJSON) {
+        usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
     }
 
-    const userId = sessionStorage.getItem('userId');
+    const userId = usuarioCorrente.id;
     if (!userId) {
         console.error('Erro: userId não encontrado no sessionStorage.');
     }
 
+    const apiUrl = `/usuarios?id=${userId}`;
+    const putUrl = `/usuarios/${userId}`;
+
 
 
     function loadProfile() {
-        fetch(apiUrl)
+        fetch(apiUrl , {
+            method: 'GET',
+            headers: {
+                'Cache-Control': 'no-cache', // Impede o cache
+            }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Erro na requisição: ${response.statusText}`);
@@ -39,99 +43,60 @@ document.addEventListener("DOMContentLoaded", function () {
                 return response.json();
             })
             .then(data => {
-                console.log(data);
-                if (data && data.length > 0) {
-                    const user = data[userId];
-                    fullNameInput.value = user.nome;
-                    birthDateInput.value = user.dataNascimento;
-                    emailInput.value = user.email;
-                    usernameInput.value = user.login;
-                    passwordInput.value = user.senha;
-                } else {
-                    console.error("Nenhum usuário encontrado.");
-                    displayMessage("Nenhum usuário encontrado.");
-                }
+                    data = data[0];
+                    fullNameInput.value = data.nome;
+                    emailInput.value = data.email;
+                    usernameInput.value = data.login;
+                    passwordInput.value = data.senha;
+
             })
             .catch(error => {
                 console.error("Erro ao carregar os dados:", error);
-                displayMessage("Erro ao carregar os dados");
             });
     }
 
-    editPersonalInfoButton.addEventListener("click", function () {
+    editInfoButton.addEventListener("click", function () {
         fullNameInput.disabled = !fullNameInput.disabled;
-        birthDateInput.disabled = !birthDateInput.disabled;
         emailInput.disabled = !emailInput.disabled;
-        editPersonalInfoButton.style.display = "none";
-        savePersonalInfoButton.style.display = "inline-block";
-    });
-
-    savePersonalInfoButton.addEventListener("click", function () {
-        const updatedData = {
-            nome: fullNameInput.value,
-            dataNascimento: birthDateInput.value,
-            email: emailInput.value,
-        };
-
-        fetch(`${apiUrl}/${userId}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updatedData),
-        })
-            .then(response => response.json())
-            .then(() => {
-                displayMessage("Informações pessoais atualizadas com sucesso!");
-                fullNameInput.disabled = true;
-                birthDateInput.disabled = true;
-                emailInput.disabled = true;
-                editPersonalInfoButton.style.display = "inline-block";
-                savePersonalInfoButton.style.display = "none";
-            })
-            .catch(error => {
-                console.error("Erro ao salvar informações pessoais:", error);
-                displayMessage("Erro ao salvar informações pessoais");
-            });
-    });
-
-    editLoginInfoButton.addEventListener("click", function () {
         usernameInput.disabled = !usernameInput.disabled;
         passwordInput.disabled = !passwordInput.disabled;
-        editLoginInfoButton.style.display = "none";
-        saveLoginInfoButton.style.display = "inline-block";
+        editInfoButton.style.display = "none";
+        saveInfoButton.style.display = "inline-block";
     });
 
-    saveLoginInfoButton.addEventListener("click", function () {
+    saveInfoButton.addEventListener("click", function () {
         const updatedData = {
-            username: usernameInput.value,
-            senha: passwordInput.value,
+            nome: fullNameInput.value,
+            email: emailInput.value,
+            login: usernameInput.value,
+            senha: passwordInput.value
         };
 
-        fetch(`${apiUrl}/${userId}`, {
+        fetch(`${putUrl}`, {
             method: "PUT",
             headers: {
+                'Cache-Control': 'no-cache',
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(updatedData),
         })
             .then(response => response.json())
             .then(() => {
-                displayMessage("Informações de login atualizadas com sucesso!");
+                fullNameInput.disabled = true;
+                emailInput.disabled = true;
                 usernameInput.disabled = true;
                 passwordInput.disabled = true;
-                editLoginInfoButton.style.display = "inline-block";
-                saveLoginInfoButton.style.display = "none";
+                editInfoButton.style.display = "inline-block";
+                saveInfoButton.style.display = "none";
             })
             .catch(error => {
-                console.error("Erro ao salvar informações de login:", error);
-                displayMessage("Erro ao salvar informações de login");
+                console.error("Erro ao salvar informações do perfil:", error);
             });
     });
 
     deleteAccountButton.addEventListener("click", function () {
 
-        fetch(`${apiUrl}/${userId}`, {
+        fetch(`${putUrl}`, {
             method: 'DELETE',
             headers: {
                 'Cache-Control': 'no-cache',
@@ -140,14 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then(response => response.json())
             .then(() => {
-                displayMessage("Conta removida com sucesso");
                 setTimeout(() => {
                     window.location.href = "http://localhost:3000/modulos/login/login.html";
                 }, 2000);
             })
             .catch(error => {
                 console.error('Erro ao remover conta:', error);
-                displayMessage("Erro ao remover conta");
             });
     });
 

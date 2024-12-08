@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <div id="header-container"></div>
     <div class="page-header">
         <div class="container">
@@ -25,44 +24,26 @@
                 <h3>Informações Pessoais</h3>
             </div>
             <div class="col-md-6 col-12 mb-3">
-                <label for="fullName"><strong>Nome Completo: </strong></label>
-                <input type="text" id="fullName" class="form-control" disabled>
+                <label for="username"><strong>Usuário: </strong></label>
+                <input type="text" id="username" class="form-control" disabled>
             </div>
             <div class="col-md-6 col-12 mb-3">
-                <label for="birthDate"><strong>Data de Nascimento: </strong></label>
-                <input type="date" id="birthDate" class="form-control" disabled>
+                <label for="fullName"><strong>Nome Completo: </strong></label>
+                <input type="text" id="fullName" class="form-control" disabled>
             </div>
             <div class="col-12 mb-3">
                 <label for="email"><strong>Email: </strong></label>
                 <input type="email" id="email" class="form-control" disabled>
             </div>
-            <div class="col-12">
-                <button type="button" class="btn btn-primary"
-                    id="editPersonalInfoButton"><strong>Editar</strong></button>
-                <button type="submit" class="btn btn-success" id="savePersonalInfoButton"
-                    style="display:none;"><strong>Salvar</strong></button>
-            </div>
-        </div>
-
-        <div class="row border rounded-5 p-4">
-            <div class="col-12 mb-4">
-                <h3>Informações de Acesso</h3>
-            </div>
-            <div class="col-md-6 col-12 mb-3">
-                <label for="username"><strong>Usuário: </strong></label>
-                <input type="text" id="username" class="form-control" disabled>
-            </div>
             <div class="col-md-6 col-12 mb-3">
                 <label for="password"><strong>Senha: </strong></label>
                 <input type="password" id="password" class="form-control" disabled>
             </div>
-            <div class="col-12 mb-1">
-                <button type="button" class="btn btn-primary" id="editLoginInfoButton"><strong>Editar Informações de
-                        Acesso</strong></button>
-                <button type="submit" class="btn btn-success" id="saveLoginInfoButton"
-                    style="display:none;"><strong>Salvar</strong></button>
-            </div>
             <div class="col-12">
+                <button type="button" class="btn btn-primary"
+                    id="editInfoButton"><strong>Editar</strong></button>
+                <button type="submit" class="btn btn-success" id="saveInfoButton"
+                    style="display:none;"><strong>Salvar</strong></button>
                 <button type="button" class="btn btn-danger" id="deleteAccountButton"><strong>Deletar
                         Conta</strong></button>
             </div>
