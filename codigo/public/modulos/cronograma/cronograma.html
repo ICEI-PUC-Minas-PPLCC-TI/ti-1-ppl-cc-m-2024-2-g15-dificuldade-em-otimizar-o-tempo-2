@@ -1,146 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronograma</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="../../assets/css/cronograma.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/css/header_style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="cronograma.js"></script> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronograma</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="../../assets/css/cronograma.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/header_style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="cronograma.js"></script>
 </head>
+
 <body>
-    <header>
-      <div id="header-container"></div>
-      <div class="page-header">
-        <div class="container">
-            <h1>Cronograma</h1>
-        </div>
-    </div>
-    </header>
-    <main>
-        <div id="login">
-          <div class="container">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" id="newbutton">
-              Nova tarefa
-            </button>
-          </div>
-        </div>
-        <div id="cronograma-main" class="container text-center">
-          <div class="row">
-            <div class="col">
-              Dom
-            </div>
-            <div class="col">
-              Seg
-            </div>
-            <div class="col">
-              Ter
-            </div>
-            <div class="col">
-              Qua
-            </div>
-            <div class="col">
-              Qui
-            </div>
-            <div class="col">
-              Sex
-            </div>
-            <div class="col">
-              Sab
-            </div>
-          </div>
-          <div id="tarefas-main" class="row">
-            <div class="col" id="1">
-              A
-            </div>
-            <div class="col" id="2">
-              B
-            </div>
-            <div class="col" id="3">
-              C
-            </div>
-            <div class="col" id="4">
-              D
-            </div>
-            <div class="col" id="5">
-              E
-            </div>
-            <div class="col" id="6">
-              F
-            </div>
-            <div class="col" id="7">
-              G
-            </div>
-          </div>
-        </div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+  <header>
+    <div id="header-container"></div>
+    <div class="page-header">
+      <div class="container">
+        <h1>Cronograma</h1>
       </div>
     </div>
-  </div>
-</div>
+  </header>
+  <main>
+    <div id="login">
+      <div class="container">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+          id="newbutton">
+          Novo horário
+        </button>
+      </div>
+    </div>
+    <div id="cronograma-main" class="container text-center">
+      <div class="row">
+        <div class="col">
+          Dom
+        </div>
+        <div class="col">
+          Seg
+        </div>
+        <div class="col">
+          Ter
+        </div>
+        <div class="col">
+          Qua
+        </div>
+        <div class="col">
+          Qui
+        </div>
+        <div class="col">
+          Sex
+        </div>
+        <div class="col">
+          Sab
+        </div>
+      </div>
+      <div id="tarefas-main" class="row">
+        <div class="col" id="1">
 
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="loginModalLabel">Nova Tarefa</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="col" id="2">
+
+        </div>
+        <div class="col" id="3">
+
+        </div>
+        <div class="col" id="4">
+
+        </div>
+        <div class="col" id="5">
+
+        </div>
+        <div class="col" id="6">
+
+        </div>
+        <div class="col" id="7">
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Novo Horário</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="login-box" class="col-md-12">
+              <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
+                <div class="form-group">
+                  <!-- <label for="login" class="text-info">Tarefa</label><br> -->
+                  <label for="tasks" class="text-info">Tarefa</label><br>
+                  <select name="tasks" id="tasks" form="login-form">
+                  </select>
+                </div><br>
+                <div class="form-group">
+                  <label for="horarioInicio" class="text-info">Horário Inicio</label><br>
+                  <input type="time" name="horarioInicio" id="horarioInicio" class="form-control">
+                </div><br>
+                <div class="form-group">
+                  <label for="horarioFim" class="text-info">Horário Fim</label><br>
+                  <input type="time" name="horarioFim" id="horarioFim" class="form-control">
+                </div><br>
+                <div class="form-group">
+                  <label for="checkSem" class="text-info">Dias da Semana</label><br>
+                  <input type="checkbox" id="checkDom" name="checkSem" value="1">
+                  <label for="checkDom"> Dom</label>
+                  <input type="checkbox" id="checkSeg" name="checkSem" value="2">
+                  <label for="checkSeg"> Seg</label>
+                  <input type="checkbox" id="checkTer" name="checkSem" value="3">
+                  <label for="checkTer"> Ter</label>
+                  <input type="checkbox" id="checkQua" name="checkSem" value="4">
+                  <label for="checkQua"> Qua</label>
+                  <input type="checkbox" id="checkQui" name="checkSem" value="5">
+                  <label for="checkQui"> Qui</label>
+                  <input type="checkbox" id="checkSex" name="checkSem" value="6">
+                  <label for="checkSex"> Sex</label>
+                  <input type="checkbox" id="checkSab" name="checkSem" value="7">
+                  <label for="checkSab"> Sab</label>
+                </div><br>
+              </form>
             </div>
-            <div class="modal-body">
-              <div id="login-box" class="col-md-12">
-                <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
-                  <h3 class="text-center text-info">Nova tarefa</h3>
-                  <div class="form-group">
-                    <!-- <label for="login" class="text-info">Tarefa</label><br> -->
-                    <label for="tasks">Tarefa</label>
-                    <select name="tasks" id="tasks" form="login-form">
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="horarioInicio" class="text-info">Horário Inicio</label><br>
-                    <input type="time" name="horarioInicio" id="horarioInicio" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="horarioFim" class="text-info">Horário Fim</label><br>
-                    <input type="time" name="horarioFim" id="horarioFim" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="checkSem" class="text-info">Dias da Semana</label><br>
-                    <input type="checkbox" id="checkDom" name="checkSem" value="1">
-                    <label for="checkDom"> Dom</label>
-                    <input type="checkbox" id="checkSeg" name="checkSem" value="2">
-                    <label for="checkSeg"> Seg</label>
-                    <input type="checkbox" id="checkTer" name="checkSem" value="3">
-                    <label for="checkTer"> Ter</label>
-                    <input type="checkbox" id="checkQua" name="checkSem" value="4">
-                    <label for="checkQua"> Qua</label>
-                    <input type="checkbox" id="checkQui" name="checkSem" value="5">
-                    <label for="checkQui"> Qui</label>
-                    <input type="checkbox" id="checkSex" name="checkSem" value="6">
-                    <label for="checkSex"> Sex</label>
-                    <input type="checkbox" id="checkSab" name="checkSem" value="7">
-                    <label for="checkSab"> Sab</label>
-                  </div>
-                </form>
-              </div>
-            </div>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
             <button type="button" id="btn_salvar" class="btn btn-info">Salvar</button>
@@ -148,8 +151,11 @@
         </div>
       </div>
     </div>
-      <!-- <button type="button" class="btn btn-danger" id="delbutton">Deletar tarefa</button> -->  
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- <button type="button" class="btn btn-danger" id="delbutton">Deletar tarefa</button> -->
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

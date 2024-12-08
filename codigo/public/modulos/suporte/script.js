@@ -1,11 +1,11 @@
 var usuarioCorrente = {};
 
 window.onload = () => {
-  usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
-  if (usuarioCorrenteJSON) {
-      usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
-  }
-    fetch (`/usuarios?id=${usuarioCorrente.id}`);
+    usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
+    if (usuarioCorrenteJSON) {
+        usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
+    }
+    fetch(`/usuarios?id=${usuarioCorrente.id}`);
 }
 
 (function () {
@@ -13,7 +13,7 @@ window.onload = () => {
 })();
 
 document.getElementById('feedbackForm').addEventListener('submit', function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
     var radios = document.getElementsByName('tipoAjuda');
 
     for (var i = 0, length = radios.length; i < length; i++) {
@@ -37,7 +37,12 @@ document.getElementById('feedbackForm').addEventListener('submit', function (eve
         }, function (error) {
             alert('Erro ao enviar feedback: ' + JSON.stringify(error));
         });
-        document.getElementById("assunto").value = "";
-        document.getElementById("mensagem").value = "";
+    document.getElementById("assunto").value = "";
+    document.getElementById("mensagem").value = "";
 });
+
+function logoutUser() {
+    sessionStorage.removeItem('usuarioCorrente');
+    window.location = "/modulos/login/login.html";
+}
 

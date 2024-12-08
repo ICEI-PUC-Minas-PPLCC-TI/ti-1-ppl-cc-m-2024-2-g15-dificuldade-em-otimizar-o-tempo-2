@@ -5,20 +5,20 @@ function execucao() {
     if (usuarioCorrenteJSON) {
         usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
     }
-        fetch(`/cronograma?id=${usuarioCorrente.id}`, {
-            method: 'GET',
-            headers: {
-                'Cache-Control': 'no-cache', // Impede o cache
-            }
+    fetch(`/cronograma?id=${usuarioCorrente.id}`, {
+        method: 'GET',
+        headers: {
+            'Cache-Control': 'no-cache', // Impede o cache
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            carregarCronograma(data);
         })
-          .then (response => response.json())
-          .then (data => {
-              carregarCronograma(data);
-          })
-          .catch (error => {
-              alert ('Erro ao obter dados do servidor:' + error.message);
-          })
-  }
+        .catch(error => {
+            alert('Erro ao obter dados do servidor:' + error.message);
+        })
+}
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -28,12 +28,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error('Erro ao carregar header:', error);
     }
-
-    execucao();
 });
 
 window.onload = () => {
-    document.getElementById('btn_salvar').addEventListener('click', criarHorario);  
+    document.getElementById('btn_salvar').addEventListener('click', criarHorario);
     execucao();
     /* fetch (`/cronograma?id=${usuarioCorrente.id}`)
     .then (response => response.json())
@@ -43,10 +41,10 @@ window.onload = () => {
     .catch (error => {
       alert ('Erro ao obter dados do servidor:' + error.message);
     }) */
-  }
+}
 
 function carregarCronograma(data) {
-    alert(JSON.stringify(data));
+    //alert(JSON.stringify(data));
     let ids_array = Array.from(data.map(item => item.tarefas.ids)).flat();
     fetch(`/tarefas?id_usuario=${usuarioCorrente.id}`, {
         method: 'GET',
@@ -54,28 +52,35 @@ function carregarCronograma(data) {
             'Cache-Control': 'no-cache',
         }
     })
-    .then(response => response.json())
-    .then(dataTasks => {
-        tarefaModal(dataTasks);
-        for (let i = 0; i < ids_array.length; i++) {
-            alert(i);
-            carregarTarefa(data, dataTasks, i);
-        }
-    })
-    .catch(error => {
-        alert('Erro ao obter dados do servidor 1: ' + error.message);
-    });
+        .then(response => response.json())
+        .then(dataTasks => {
+            tarefaModal(dataTasks);
+            // Limpar cronograma para evitar duplicação após inserir horário
+            for (let i = 1; i <= 7; i++) {
+                document.getElementById(i).innerHTML = "";
+            }
+            for (let i = 0; i < ids_array.length; i++) {
+                //alert(i);
+                carregarTarefa(data, dataTasks, i);
+            }
+        })
+        .catch(error => {
+            alert('Erro ao obter dados do servidor 1: ' + error.message);
+        });
 }
 
 function tarefaModal(dataTasks) {
     let tarefas = Array.from(dataTasks.map(item => item.nomeTarefa));
     let ids = Array.from(dataTasks.map(item => item.id));
-    for(let i = 0; i < tarefas.length; i++) {
-        let novaOpcao = document.createElement("option");
-        novaOpcao.value = ids[i];
-        novaOpcao.innerHTML = tarefas[i];
-        document.getElementById("tasks").appendChild(novaOpcao);
+    if (document.getElementById("tasks").childElementCount < tarefas.length) {
+        for (let i = 0; i < tarefas.length; i++) {
+            let novaOpcao = document.createElement("option");
+            novaOpcao.value = ids[i];
+            novaOpcao.innerHTML = tarefas[i];
+            document.getElementById("tasks").appendChild(novaOpcao);
+        }
     }
+
 
 }
 
@@ -143,7 +148,7 @@ async function montarHorario(tarefa, diasCheck, horasInicio, minutosInicio, hora
 
         // Se você quiser confirmar a execução antes de retornar
         console.log("Novo horário montado dentro de montarHorario:", novoHorario);
-        
+
         return novoHorario;
     } catch (error) {
         alert('Erro ao obter dados do servidor 2: ' + error.message);
@@ -153,7 +158,7 @@ async function montarHorario(tarefa, diasCheck, horasInicio, minutosInicio, hora
 
 
 function inserirHorario(data, novoHorario) {
-    alert(JSON.stringify(novoHorario));
+    //alert(JSON.stringify(novoHorario));
     fetch(`/cronograma/${usuarioCorrente.id}`, {
         method: 'PUT',
         headers: {
@@ -164,8 +169,8 @@ function inserirHorario(data, novoHorario) {
     })
         .then(response => response.json())
         .then(data => {
-                alert("Novo horário inserido com sucesso.");
-                execucao(); 
+            alert("Novo horário inserido com sucesso.");
+            execucao();
         })
         .catch(error => {
             console.error('Erro ao atualizar cronograma via API JSONServer:', error);
@@ -205,15 +210,21 @@ async function criarHorario() {
         horas = horarioFim.split(":");
         let horasFim = horas[0];
         let minutosFim = horas[1];
+        if (horasInicio > horasFim || horasInicio == null || minutosInicio == null ||
+            horasFim == null || minutosFim == null
+        ) {
+            alert("Horário inválido.");
+        }
+        else {
+            // Aqui, chamamos a função montarHorario e aguardamos o seu retorno
+            const novoHorario = await montarHorario(tarefa, diasCheck, horasInicio, minutosInicio, horasFim, minutosFim);
 
-        // Aqui, chamamos a função montarHorario e aguardamos o seu retorno
-        const novoHorario = await montarHorario(tarefa, diasCheck, horasInicio, minutosInicio, horasFim, minutosFim);
+            // Adiciona um alert para ver se novoHorario está correto
+            alert("Novo horário montado: " + JSON.stringify(novoHorario));
 
-        // Adiciona um alert para ver se novoHorario está correto
-        alert("Novo horário montado: " + JSON.stringify(novoHorario));
-
-        // Depois que novoHorario estiver montado, chamamos inserirHorario
-        inserirHorario(data, novoHorario);
+            // Depois que novoHorario estiver montado, chamamos inserirHorario
+            inserirHorario(data, novoHorario);
+        }
 
     } catch (error) {
         // Se ocorrer algum erro, exibe uma mensagem
@@ -223,24 +234,94 @@ async function criarHorario() {
 
 
 function carregarTarefa(data, dataTasks, i) {
-    
+    removerTarefasInexistentes(data, dataTasks);
+    //console.log(JSON.stringify(data, null, 2));
     let dias = Array.from(data.map(item => item.tarefas.horarios.diasSemana[i].dias));
-    alert(dias);
+    //alert(dias);
     //let horarios = Array.from(data.map(item => item.tarefas.horarios.inicio[i].hr + ":" + item.tarefas.horarios.inicio[i].min + " - "
     //   + item.tarefas.horarios.fim[i].hr + ":" + item.tarefas.horarios.fim[i].min));
-    let horarios = Array.from(data.map(item => item.tarefas.horarios.inicio[i].hr + ":" + String(item.tarefas.horarios.inicio[i].min).padStart(2, '0') + " - "
-       + item.tarefas.horarios.fim[i].hr + ":" + String(item.tarefas.horarios.fim[i].min).padStart(2, '0')));
+    let horarios = Array.from(data.map(item => {
+        if (item.tarefas.horarios.inicio[i] && item.tarefas.horarios.fim[i]) {
+            return `${item.tarefas.horarios.inicio[i].hr}:${String(item.tarefas.horarios.inicio[i].min).padStart(2, '0')} - `
+                + `${item.tarefas.horarios.fim[i].hr}:${String(item.tarefas.horarios.fim[i].min).padStart(2, '0')}`;
+        } else {
+            return null; // Retorna null se as propriedades forem undefined
+        }
+    }));
     let nomes = Array.from(data.map(item => dataTasks.find(task => task.id === item.tarefas.ids[i])?.nomeTarefa));
-    
-    // tarefaHTML.className = "col";
-    for(let i = 0; i < dias.length; i++) {
+    let prioridade = Array.from(data.map(item => dataTasks.find(task => task.id === item.tarefas.ids[i])?.prioridade));
+
+    // Atualizar cronograma
+    for (let i = 0; i < dias.length; i++) {
         dias[i].forEach(dia => {
-            let tarefaHTML = document.createElement("div");
-            let tarefaInfo = `${horarios[i]}\n${nomes[i]}`;
-            tarefaHTML.innerHTML = `${tarefaInfo}`;
-            document.getElementById(dia).appendChild(tarefaHTML);
+            // Verifica se a tarefa existe antes de criar a entrada no cronograma
+            if (nomes[i] !== null) {
+                let tarefaHTML = document.createElement("div");
+                tarefaHTML.className = "tarefaPrioridade" + prioridade[i];
+                let tarefaInfo = `${horarios[i]}\n${nomes[i]}`;
+                tarefaHTML.innerHTML = `${tarefaInfo}`;
+                document.getElementById(dia).appendChild(tarefaHTML);
+            }
         })
     }
-    
-
+    // Remover elementos "undefined" do cronograma
+    for (let i = 0; i < dias.length; i++) {
+        dias[i].forEach(dia => {
+            let elementos = document.getElementById(dia).getElementsByClassName("tarefaPrioridadeundefined");
+            while (elementos.length > 0) {
+                elementos[0].parentNode.removeChild(elementos[0]);
+            }
+        });
+    }
 }
+
+function removerTarefasInexistentes(data, dataTasks) {
+    data.forEach(item => {
+        // Filtra IDs para manter apenas os que existem em dataTasks
+        const idsValidos = item.tarefas.ids.filter(id => dataTasks.some(task => task.id === id));
+
+        // Cria arrays filtrados para 'horarios' correspondentes aos IDs válidos
+        const diasValidos = [];
+        const horariosInicioValidos = [];
+        const horariosFimValidos = [];
+
+        item.tarefas.ids.forEach((id, index) => {
+            if (idsValidos.includes(id)) {
+                // Adiciona os dias e horários correspondentes aos IDs válidos
+                diasValidos.push(item.tarefas.horarios.diasSemana[index].dias);
+                horariosInicioValidos.push(item.tarefas.horarios.inicio[index]);
+                horariosFimValidos.push(item.tarefas.horarios.fim[index]);
+            }
+        });
+
+        // Atualiza o objeto 'item' com os dados válidos
+        item.tarefas.ids = idsValidos;
+        item.tarefas.horarios.diasSemana = item.tarefas.horarios.diasSemana.map((dias, index) => {
+            return { dias: diasValidos[index] || [] };
+        });
+        item.tarefas.horarios.inicio = horariosInicioValidos;
+        item.tarefas.horarios.fim = horariosFimValidos;
+    });
+
+    // Remover entradas de 'item' onde 'ids' está vazio
+    data = data.filter(item => item.tarefas.ids.length > 0);
+    // Mal funcionamento: atualizarDelete(data);
+}
+
+function logoutUser() {
+    sessionStorage.removeItem('usuarioCorrente');
+    window.location = "/modulos/login/login.html";
+}
+
+/*
+function atualizarDelete(data)
+{
+    fetch(`/cronograma/${usuarioCorrente.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+        },
+        body: JSON.stringify(data),
+    })
+}*/

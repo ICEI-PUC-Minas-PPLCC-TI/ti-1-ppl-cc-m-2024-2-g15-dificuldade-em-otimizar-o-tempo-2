@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const apiUrl = '/usuarios'; 
+    const apiUrl = '/usuarios';
 
-    sessionStorage.setItem('userId', 1); 
+    sessionStorage.setItem('userId', 1);
 
     const fullNameInput = document.getElementById("fullName");
     const birthDateInput = document.getElementById("birthDate");
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return response.json();
             })
             .then(data => {
-                console.log(data); 
+                console.log(data);
                 if (data && data.length > 0) {
                     const user = data[userId];
                     fullNameInput.value = user.nome;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 displayMessage("Erro ao carregar os dados");
             });
     }
-   
+
     editPersonalInfoButton.addEventListener("click", function () {
         fullNameInput.disabled = !fullNameInput.disabled;
         birthDateInput.disabled = !birthDateInput.disabled;
@@ -73,26 +73,26 @@ document.addEventListener("DOMContentLoaded", function () {
             email: emailInput.value,
         };
 
-        fetch(`${apiUrl}/${userId}`, {  
+        fetch(`${apiUrl}/${userId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(updatedData),
         })
-        .then(response => response.json())
-        .then(() => {
-            displayMessage("Informações pessoais atualizadas com sucesso!");
-            fullNameInput.disabled = true;
-            birthDateInput.disabled = true;
-            emailInput.disabled = true;
-            editPersonalInfoButton.style.display = "inline-block";
-            savePersonalInfoButton.style.display = "none";
-        })
-        .catch(error => {
-            console.error("Erro ao salvar informações pessoais:", error);
-            displayMessage("Erro ao salvar informações pessoais");
-        });
+            .then(response => response.json())
+            .then(() => {
+                displayMessage("Informações pessoais atualizadas com sucesso!");
+                fullNameInput.disabled = true;
+                birthDateInput.disabled = true;
+                emailInput.disabled = true;
+                editPersonalInfoButton.style.display = "inline-block";
+                savePersonalInfoButton.style.display = "none";
+            })
+            .catch(error => {
+                console.error("Erro ao salvar informações pessoais:", error);
+                displayMessage("Erro ao salvar informações pessoais");
+            });
     });
 
     editLoginInfoButton.addEventListener("click", function () {
@@ -108,25 +108,25 @@ document.addEventListener("DOMContentLoaded", function () {
             senha: passwordInput.value,
         };
 
-        fetch(`${apiUrl}/${userId}`, {  
+        fetch(`${apiUrl}/${userId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(updatedData),
         })
-        .then(response => response.json())
-        .then(() => {
-            displayMessage("Informações de login atualizadas com sucesso!");
-            usernameInput.disabled = true;
-            passwordInput.disabled = true;
-            editLoginInfoButton.style.display = "inline-block";
-            saveLoginInfoButton.style.display = "none";
-        })
-        .catch(error => {
-            console.error("Erro ao salvar informações de login:", error);
-            displayMessage("Erro ao salvar informações de login");
-        });
+            .then(response => response.json())
+            .then(() => {
+                displayMessage("Informações de login atualizadas com sucesso!");
+                usernameInput.disabled = true;
+                passwordInput.disabled = true;
+                editLoginInfoButton.style.display = "inline-block";
+                saveLoginInfoButton.style.display = "none";
+            })
+            .catch(error => {
+                console.error("Erro ao salvar informações de login:", error);
+                displayMessage("Erro ao salvar informações de login");
+            });
     });
 
     deleteAccountButton.addEventListener("click", function () {
@@ -138,18 +138,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Content-Type": "application/json",
             },
         })
-        .then(response => response.json())
-        .then(() => {
-            displayMessage("Conta removida com sucesso");
-            setTimeout(() => {
-            window.location.href = "http://localhost:3000/modulos/login/login.html";
-        }, 2000);
-        })
-        .catch(error => {
-            console.error('Erro ao remover conta:', error);
-            displayMessage("Erro ao remover conta");
-        });
+            .then(response => response.json())
+            .then(() => {
+                displayMessage("Conta removida com sucesso");
+                setTimeout(() => {
+                    window.location.href = "http://localhost:3000/modulos/login/login.html";
+                }, 2000);
+            })
+            .catch(error => {
+                console.error('Erro ao remover conta:', error);
+                displayMessage("Erro ao remover conta");
+            });
     });
 
     loadProfile();
 });
+
+function logoutUser() {
+    sessionStorage.removeItem('usuarioCorrente');
+    window.location = "/modulos/login/login.html";
+}

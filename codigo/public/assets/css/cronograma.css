@@ -6,3 +6,21 @@
     background-color: #CC5B6F !important;
     border: none;
 }
+
+.tarefaPrioridade1{
+    background-color: #f8d6d9;
+    border-bottom: #dc3545 solid;
+    border-radius: 10%;
+}
+
+.tarefaPrioridade2{
+    background-color: #fff0c4;
+    border-bottom: #ffc107 solid;
+    border-radius: 10%;
+}
+
+.tarefaPrioridade3{
+    background-color: #cef6e4;
+    border-bottom: #198754 solid 4px;
+    border-radius: 10%;
+}
