@@ -251,6 +251,7 @@ function carregarTarefa(data, dataTasks, i) {
             return null; // Retorna null se as propriedades forem undefined
         }
     }));
+    let ids = Array.from(data.map(item => item.tarefas.ids[i]));
     let nomes = Array.from(data.map(item => dataTasks.find(task => task.id === item.tarefas.ids[i])?.nomeTarefa));
     let prioridade = Array.from(data.map(item => dataTasks.find(task => task.id === item.tarefas.ids[i])?.prioridade));
 
@@ -261,21 +262,22 @@ function carregarTarefa(data, dataTasks, i) {
             if (nomes[i] !== null) {
                 let tarefaHTML = document.createElement("div");
                 tarefaHTML.className = "tarefaPrioridade" + prioridade[i];
+                tarefaHTML.id = dia + "." + ids[i];
                 let tarefaInfo = `${horarios[i]}\n${nomes[i]}`;
-
+                
                 // Criar botão de deletar
                 let btnDeletar = document.createElement("button");
-                btnDeletar.className = "btn btn-danger btn-sm";
-                btnDeletar.textContent = "Excluir";
+                btnDeletar.className = "btn btn-outline-danger btn-sm";
+                btnDeletar.textContent = "❌";
                                 
                 // Definir o evento de clique para deletar
                 btnDeletar.addEventListener("click", () => {
-                deletarHorario(dia, i, data, dataTasks);
+                deletarHorario(tarefaHTML.id, data);
                 });
                 
                 // Adicionar o botão à div da tarefa
                 
-                tarefaHTML.innerHTML = `${tarefaInfo}`;
+                tarefaHTML.innerHTML = `${tarefaInfo}<br>`;
                 tarefaHTML.appendChild(btnDeletar);
                 document.getElementById(dia).appendChild(tarefaHTML);
                 document.getElementById(dia).appendChild(document.createElement("br"));
@@ -329,53 +331,41 @@ function removerTarefasInexistentes(data, dataTasks) {
     atualizarDelete(data[0]);
 }
 
+function deletarHorario(horario, data)
+{
+    horarioInfo = horario.split(".");
+    dia = parseInt(horarioInfo[0]);
+    console.log("Dia: " + dia + "\nTipo: " + typeof(dia));
+    idTask = parseInt(horarioInfo[1]);
+    console.log("Id da task: " + idTask + "\nTipo: " + typeof(idTask));
+    idsDisponiveis = data.map(item => item.tarefas.ids).flat();
+    console.log("Ids disponíveis: " + idsDisponiveis + "\nTipo: " + typeof(idsDisponiveis[0])); 
+    index = idsDisponiveis.findIndex(item => item === idTask);
+    tasksDays = Array.from(data.map(item => item.tarefas.horarios.diasSemana[index].dias));
+    posDays = tasksDays.findIndex(item => item === dia);
+    tasksDays.splice(posDays, 1);
+    // Se o idTask for encontrado, faça as alterações no JSON original
+    if (index !== -1) {
+        // Encontrar o item correspondente no data para a modificação
+        let task = data.find(item => item.tarefas.ids.includes(idTask));
+        if (task) {
+            // Encontrar a posição do dia específico em diasSemana
+            let posDays = task.tarefas.horarios.diasSemana[index].dias.findIndex(item => item === dia);
+
+            if (posDays !== -1) {
+                // Remover o dia encontrado
+                task.tarefas.horarios.diasSemana[index].dias.splice(posDays, 1);
+            }
+        }
+    }
+    console.log("Dados: ", JSON.stringify(data));
+    atualizarDelete(data[0]);
+}
+
 function logoutUser() {
     sessionStorage.removeItem('usuarioCorrente');
     window.location = "/modulos/login/login.html";
 }
-
-function deletarHorario(dia, index, data, dataTasks) {
-    // Encontrar a tarefa correta com base no índice `index`
-    let tarefa = dataTasks[index];  // Aqui pegamos a tarefa com base no índice
-
-    // Remover a tarefa do cronograma na interface
-    let tarefasNoDia = document.getElementById(dia);
-    if (tarefasNoDia.length > 0) {
-        let tarefaDiaDel = tarefasNoDia[index];
-        tarefaDiaDel.remove(); // Remove a tarefa associada ao dia clicado
-    }
-
-    // Atualizar o cronograma removendo o dia correto da tarefa
-    let diasSemanaAtuais = data[index].tarefas.horarios.diasSemana;
-
-    // Encontrar o índice do dia na lista `diasSemana` que está associada à tarefa
-    let diaIndex = parseInt(dia-1);
-
-    if (diaIndex !== -1) {
-        // Remover o dia específico da tarefa
-        diasSemanaAtuais[diaIndex].dias = diasSemanaAtuais[diaIndex].dias.filter(d => d !== parseInt(dia));
-        alert(diasSemanaAtuais[diaIndex].dias);
-        // Se não houver mais dias associados à tarefa, podemos remover o objeto "dias" vazio
-        if (diasSemanaAtuais[diaIndex].dias.length === 0) {
-            diasSemanaAtuais.splice(diaIndex, 1); // Remove a entrada de dia vazio
-        }
-
-        // Atualizar a lista `diasSemana` da tarefa no objeto `data`
-        data[index].tarefas.horarios.diasSemana = diasSemanaAtuais;
-
-        // Chamar a função para atualizar a base de dados (ou fazer outra ação necessária)
-        atualizarDelete(data[index]);
-
-        // Notificar o usuário sobre a exclusão
-        alert("Tarefa excluída do cronograma no dia " + dia);
-    } else {
-        alert("Erro: Não foi possível localizar a tarefa no índice fornecido.");
-    }
-}
-
-
-
-
 
 function atualizarDelete(data)
 {
@@ -387,4 +377,5 @@ function atualizarDelete(data)
         },
         body: JSON.stringify(data),
     })
+    execucao();
 }
