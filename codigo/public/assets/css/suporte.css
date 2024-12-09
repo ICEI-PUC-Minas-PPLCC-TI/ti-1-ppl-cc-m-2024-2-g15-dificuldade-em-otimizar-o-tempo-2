@@ -1,0 +1,19 @@
+.box {
+    max-width: 600px;
+    background-color: #fcfcfc;
+}
+
+.form-check-input, .form-control {
+    background-color: #e2e2e2;
+    border: solid 1px;
+}
+
+.botao_perfil {
+    color: #fff;
+    background-color: rgb(7, 62, 114);
+}
+
+.botao_enviar {
+    color: #fff;
+    background-color: rgb(7, 62, 114);
+}
