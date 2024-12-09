@@ -13,61 +13,9 @@
       "senha": "123",
       "nome": "Usuario Comum",
       "email": "user@abc.com"
-    },
-    {
-      "login": "user2",
-      "senha": "123",
-      "nome": "Usuário da Silva",
-      "email": "usuariolopes@email.com",
-      "id": 3
-    }
-  ],
-  "mensagens": [
-    {
-      "id": 1,
-      "id_usuario": 2,
-      "email": "email@gmail.com",
-      "tipo": "suporte",
-      "assunto": "assunto exemplo",
-      "mensagem": "mensagem lorem ipsum"
-    },
-    {
-      "id": 2,
-      "id_usuario": 2,
-      "email": "email@gmail.com",
-      "tipo": "feedback",
-      "assunto": "blabla",
-      "mensagem": "opa"
     }
   ],
   "tarefas": [
-    {
-      "id": 3,
-      "id_usuario": 2,
-      "nomeTarefa": "tarefa_exemplo3",
-      "categoria": "Lazer",
-      "prioridade": 3,
-      "dataInicio": {
-        "dd": 5,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 7,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 7,
-        "mm": 10,
-        "yyyy": 2024
-      },
-      "concluido": 1,
-      "tempoGasto": {
-        "hr": 1,
-        "min": 45
-      }
-    },
     {
       "id": 5,
       "id_usuario": 2,
@@ -139,41 +87,14 @@
         "yyyy": 2024
       },
       "dataConclusao": {
-        "dd": 5,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "concluido": 0,
-      "tempoGasto": {
-        "hr": 4,
-        "min": 30
-      }
-    },
-    {
-      "id": 11,
-      "id_usuario": 2,
-      "nomeTarefa": "tarefa_exemplo11",
-      "categoria": "Trabalho",
-      "prioridade": 2,
-      "dataInicio": {
-        "dd": 8,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "dataFim": {
-        "dd": 12,
-        "mm": 11,
-        "yyyy": 2024
-      },
-      "dataConclusao": {
-        "dd": 10,
-        "mm": 11,
+        "dd": 7,
+        "mm": 12,
         "yyyy": 2024
       },
       "concluido": 1,
       "tempoGasto": {
-        "hr": 2,
-        "min": 0
+        "hr": 4,
+        "min": 30
       }
     },
     {
@@ -285,9 +206,63 @@
       }
     },
     {
-      "id_usuario": "1",
-      "nomeTarefa": "adsqad",
-      "categoria": "asdasd",
+      "id_usuario": 1,
+      "nomeTarefa": "Teste",
+      "categoria": "Abobora",
+      "prioridade": 2,
+      "dataInicio": {
+        "dd": 7,
+        "mm": 12,
+        "yyyy": 2024
+      },
+      "dataFim": {
+        "dd": 9,
+        "mm": 12,
+        "yyyy": 2024
+      },
+      "dataConclusao": {
+        "dd": 7,
+        "mm": 12,
+        "yyyy": 2024
+      },
+      "concluido": 1,
+      "tempoGasto": {
+        "hr": 0,
+        "min": 0
+      },
+      "id": 20
+    },
+    {
+      "id_usuario": 1,
+      "nomeTarefa": "Teste2",
+      "categoria": "Banho",
+      "prioridade": 1,
+      "dataInicio": {
+        "dd": 14,
+        "mm": 3,
+        "yyyy": 2024
+      },
+      "dataFim": {
+        "dd": 16,
+        "mm": 4,
+        "yyyy": 2024
+      },
+      "dataConclusao": {
+        "dd": 7,
+        "mm": 12,
+        "yyyy": 2024
+      },
+      "concluido": 1,
+      "tempoGasto": {
+        "hr": 0,
+        "min": 0
+      },
+      "id": 21
+    },
+    {
+      "id_usuario": 1,
+      "nomeTarefa": "aa",
+      "categoria": "Banho",
       "prioridade": 1,
       "dataInicio": {
         "dd": 0,
@@ -305,6 +280,29 @@
         "yyyy": 2024
       },
       "concluido": 1,
+      "tempoGasto": {
+        "hr": 0,
+        "min": 0
+      },
+      "id": 22
+    },
+    {
+      "id_usuario": 1,
+      "nomeTarefa": "ab",
+      "categoria": "aaaab",
+      "prioridade": 1,
+      "dataInicio": {
+        "dd": 0,
+        "mm": 0,
+        "yyyy": 0
+      },
+      "dataFim": {
+        "dd": 0,
+        "mm": 0,
+        "yyyy": 0
+      },
+      "dataConclusao": null,
+      "concluido": 0,
       "tempoGasto": {
         "hr": 0,
         "min": 0
@@ -312,9 +310,9 @@
       "id": 23
     },
     {
-      "id_usuario": "1",
-      "nomeTarefa": "asdasd",
-      "categoria": "asdas",
+      "id_usuario": 1,
+      "nomeTarefa": "baha",
+      "categoria": "bababa",
       "prioridade": 1,
       "dataInicio": {
         "dd": 0,
@@ -326,12 +324,8 @@
         "mm": 0,
         "yyyy": 0
       },
-      "dataConclusao": {
-        "dd": 7,
-        "mm": 12,
-        "yyyy": 2024
-      },
-      "concluido": 1,
+      "dataConclusao": null,
+      "concluido": 0,
       "tempoGasto": {
         "hr": 0,
         "min": 0
@@ -339,9 +333,9 @@
       "id": 24
     },
     {
-      "id_usuario": "1",
-      "nomeTarefa": "sadasdas",
-      "categoria": "asdasd",
+      "id_usuario": 1,
+      "nomeTarefa": "bdfgdf",
+      "categoria": "bdbfdb",
       "prioridade": 1,
       "dataInicio": {
         "dd": 0,
@@ -362,17 +356,17 @@
       "id": 25
     },
     {
-      "id_usuario": "1",
-      "nomeTarefa": "asdasd",
-      "categoria": "dasda",
+      "id_usuario": 2,
+      "nomeTarefa": "tarefa_exemplo11",
+      "categoria": "Lazer",
       "prioridade": 1,
       "dataInicio": {
-        "dd": 13,
+        "dd": 1,
         "mm": 12,
         "yyyy": 2024
       },
       "dataFim": {
-        "dd": 20,
+        "dd": 4,
         "mm": 12,
         "yyyy": 2024
       },
@@ -383,6 +377,29 @@
         "min": 0
       },
       "id": 26
+    },
+    {
+      "id_usuario": 4,
+      "nomeTarefa": "Tarefa1",
+      "categoria": "Trabalho",
+      "prioridade": 2,
+      "dataInicio": {
+        "dd": 8,
+        "mm": 12,
+        "yyyy": 2024
+      },
+      "dataFim": {
+        "dd": 11,
+        "mm": 12,
+        "yyyy": 2024
+      },
+      "dataConclusao": null,
+      "concluido": 0,
+      "tempoGasto": {
+        "hr": 0,
+        "min": 0
+      },
+      "id": 27
     }
   ],
   "cronograma": [
@@ -396,10 +413,7 @@
           6,
           8,
           10,
-          12,
-          14,
-          16,
-          18
+          12
         ],
         "horarios": {
           "inicio": [
@@ -482,6 +496,32 @@
                 2,
                 5
               ]
+            },
+            {
+              "dias": [
+                3,
+                6
+              ]
+            },
+            {
+              "dias": [
+                4,
+                7
+              ]
+            },
+            {
+              "dias": [
+                1,
+                4,
+                6
+              ]
+            },
+            {
+              "dias": [
+                2,
+                3,
+                7
+              ]
             }
           ]
         }
@@ -491,41 +531,51 @@
       "id": 2,
       "tarefas": {
         "ids": [
-          3,
           5,
-          19
+          15,
+          19,
+          13,
+          9
         ],
         "horarios": {
           "inicio": [
             {
-              "hr": 2,
-              "min": 15
-            },
-            {
-              "hr": 4,
+              "hr": 8,
               "min": 30
             },
             {
               "hr": 8,
-              "min": 45
+              "min": 30
             },
             {
-              "hr": 9,
+              "hr": 8,
+              "min": 30
+            },
+            {
+              "hr": 8,
+              "min": 30
+            },
+            {
+              "hr": 8,
               "min": 30
             }
           ],
           "fim": [
             {
-              "hr": 8,
-              "min": 45
-            },
-            {
-              "hr": 6,
+              "hr": 22,
               "min": 30
             },
             {
-              "hr": 10,
-              "min": 45
+              "hr": 22,
+              "min": 30
+            },
+            {
+              "hr": 22,
+              "min": 30
+            },
+            {
+              "hr": 22,
+              "min": 30
             },
             {
               "hr": 22,
@@ -535,20 +585,34 @@
           "diasSemana": [
             {
               "dias": [
-                1,
                 2,
-                3
-              ]
-            },
-            {
-              "dias": [
-                2,
+                3,
                 4
               ]
             },
             {
               "dias": [
-                5,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "dias": [
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "dias": [
+                2,
+                7
+              ]
+            },
+            {
+              "dias": [
+                2,
                 6,
                 7
               ]
