@@ -33,7 +33,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function (eve
 
     emailjs.send('service_m6l7euo', 'template_5r0s015', templateParams)
         .then(function (response) {
-            alert('Solicitação enviado com sucesso!');
+            alert('Mensagem enviada com sucesso!');
         }, function (error) {
             alert('Erro ao enviar feedback: ' + JSON.stringify(error));
         });

@@ -219,8 +219,6 @@ async function criarHorario() {
             // Aqui, chamamos a função montarHorario e aguardamos o seu retorno
             const novoHorario = await montarHorario(tarefa, diasCheck, horasInicio, minutosInicio, horasFim, minutosFim);
 
-            // Adiciona um alert para ver se novoHorario está correto
-            alert("Novo horário montado: " + JSON.stringify(novoHorario));
 
             // Depois que novoHorario estiver montado, chamamos inserirHorario
             inserirHorario(data, novoHorario);

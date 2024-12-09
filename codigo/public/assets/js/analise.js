@@ -224,7 +224,6 @@ function concluidasHoje(data) {
   else if (Number(hoje.textContent) > qtdConcluidas) {
     hoje.textContent = qtdConcluidas;
     hoje.innerHTML += "<img src='../../assets/images/redTriangle.png'/>";
-    alert(qtdConcluidas);
   }
   else {
     hoje.textContent = qtdConcluidas;
