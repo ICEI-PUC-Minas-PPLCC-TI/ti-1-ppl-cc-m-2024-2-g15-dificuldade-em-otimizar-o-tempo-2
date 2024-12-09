@@ -105,7 +105,7 @@ function logoutUser () {
 function addUser (nome, login, senha, email) {
 
     // Cria um objeto de usuario para o novo usuario 
-    let usuario = {"login": login, "senha": senha, "nome": nome, "email": email};
+    let usuario = {"id": db_usuarios.length+1, "login": login, "senha": senha, "nome": nome, "email": email};
 
     // Envia dados do novo usuário para ser inserido no JSON Server
     fetch(API_URL, {
