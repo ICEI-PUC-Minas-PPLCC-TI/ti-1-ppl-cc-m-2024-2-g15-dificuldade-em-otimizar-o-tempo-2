@@ -5,7 +5,6 @@ Nosso projeto tem como objetivo desenvolver uma plataforma online para otimizar 
 
 ## Alunos integrantes da equipe
 
- * [João Paulo Cury Torres](https://github.com)
   * [Leonardo Araujo Passos](https://github.com/LeoPassos98)
   * [Marcos Vinicius Nunes Reis](https://github.com/marcosware)
   * [Maria Luiza Manini de Oliveira](https://github.com/malumanini)
