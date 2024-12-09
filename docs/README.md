@@ -277,6 +277,23 @@ Divisão de papéis no grupo e apresentação da estrutura da ferramenta de cont
 
 ![Notas e próximos passos](images/notas.png)
 
+# Solução implementada
+
+## Gerenciamento de tarefas e calendário
+
+![Tarefas e calendário](images/solucaoTarefas.png)
+![Lista de tarefas](images/solucaoTarefas2.png)
+
+## Análise semanal e progresso de conclusão de tarefas
+
+![Análise](images/solucaoAnalise.png)
+
+## Cronograma de tarefas
+
+![Cronograma](images/solucaoCronograma.png)
+
+## 
+
 # Referências
 
 As referências utilizadas no trabalho foram:
