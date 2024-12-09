@@ -125,6 +125,20 @@ function addUser (nome, login, senha, email) {
             console.error('Erro ao inserir usuário via API JSONServer:', error);
             displayMessage("Erro ao inserir usuário");
         });
+    let cronograma = {"id": null, "tarefas": { "ids": [], "horarios": { "inicio": [],
+    "fim": [], "diasSemana": []}}};
+    
+    fetch("/cronograma", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cronograma)
+    })
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Erro ao inserir cronograma via API JSONServer:', error);
+        });
 }
 
 function showUserInfo (element) {
